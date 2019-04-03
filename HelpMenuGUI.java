@@ -52,10 +52,11 @@ public class HelpMenuGUI extends JPanel
       JTextArea titleBox = new JTextArea(pageTitle);
       JTextArea textBox  = new JTextArea(helpText);
 
-      // Set text wrap and editable settings for help text
+      // Set text wrap and editable settings for help text and titl text
       textBox.setLineWrap(true);
       textBox.setWrapStyleWord(true);
       textBox.setEditable(false);
+      titleBox.setEditable(false);
 
       // Set JScrollPane 
       scrollPane = new JScrollPane(textBox);
