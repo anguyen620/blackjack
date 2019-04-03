@@ -1,0 +1,20 @@
+Blackjack: a game of skill, with a heavy emphasis on chance
+
+INTRO
+The American version of "Twenty-One," this game is beloved by casual fans and gambling addicts alike!
+
+The goal is to reach as high a score as possible, adding up the face values of all cards in a player's hand. Each player is dealt two cards to start, and each has an oppurtunity to as the dealer to "hit" them with another card, in an attempt to raise their score, or to "stand" on their current value. (There are also technically two other options a player has, but these are more advanced, and are covered further down)
+
+However, if a player's score surpasses 21, they "bust," and lose that round. Any money bet that round is lost.
+
+After all players have completed their turns, the dealer then plays. In contrast to regular players, they start with one of their cards face down, and one face up. This adds an extra layer of strategy for the player to consider, as they only know half of the dealer's current potential. 
+
+WINNING CONDITIONS
+A player wins a round if their final score is higher than the dealer's, or if the dealer busts. Any player who has a score less than the dealer, assuming the dealer didn't bust, must pay their bet to the dealer. 
+
+Depending on the specific casino, a dealer's choice to hit or stand depending on their hand is different.
+
+DOUBLE DOWN & SPLIT
+In addition to hitting or standing, a player has a choice to double down. In this, they may double their current bet, but while committing to receiving only one more card.
+
+Splitting is an option when both starting cards for a player are the same. If they choose to split, they double their bet and treat each card as its own hand, reciving two more cards from the dealer immediately, and then playing each hand normally.
