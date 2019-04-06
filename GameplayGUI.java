@@ -58,7 +58,7 @@ public class GameplayGUI extends JPanel
 
       for (int i = 1; i <= 4; i++)
       {
-         BufferedImage picture = ImageIO.read(new File("image" + Integer.toString(i) + ".jpeg"));
+         BufferedImage picture = ImageIO.read(new File("./images/image" + Integer.toString(i) + ".jpeg"));
          pictures[i - 1] = new JLabel(new ImageIcon(picture));
       }
    }
