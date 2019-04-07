@@ -7,6 +7,8 @@ class Driver
        TimeUnit time = TimeUnit.SECONDS;
        BlackjackView game = new BlackjackView();   
        time.sleep(3);
+       game.displayHelp();
+       time.sleep(3);
        game.displayGame();
        time.sleep(3);
        game.displayEndMessage("You win!", 11, 18, 0);

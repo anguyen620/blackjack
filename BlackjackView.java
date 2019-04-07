@@ -6,9 +6,11 @@ import java.io.*;
 public class BlackjackView 
 {
    protected JFrame frame;
+   protected JPanel currentPanel;
    protected EndMessage endMessage;
    protected Opening opening;
    protected GameplayGUI gameGUI;
+   protected HelpMenuGUI helpGUI;
 
    BlackjackView()
    {
@@ -17,12 +19,13 @@ public class BlackjackView
       try
       {
       this.opening = new Opening();
+      this.currentPanel = this.opening;
       }
       catch (IOException error)
       {
          System.out.println("openingpic.png cannot be found");
       }
-      frame.add(opening);
+      frame.add(this.currentPanel);
       frame.pack();
       frame.setVisible(true);
    }
@@ -39,8 +42,18 @@ public class BlackjackView
    public void displayGame()
    {
       this.gameGUI = new GameplayGUI();
+      this.currentPanel.setVisible(false);
+      this.currentPanel = this.gameGUI;
+      this.frame.add(this.currentPanel);
+      this.frame.pack();
+   }
+
+   public void displayHelp()
+   {
+      this.helpGUI = new HelpMenuGUI();
       this.opening.setVisible(false);
-      this.frame.add(this.gameGUI);
+      this.currentPanel = this.helpGUI;
+      this.frame.add(this.currentPanel);
       this.frame.pack();
    }
    
@@ -48,7 +61,8 @@ public class BlackjackView
    {
       this.endMessage = new EndMessage(winner, dealerScore, playerScore, computerScore);
       this.gameGUI.setVisible(false);
-      frame.add(this.endMessage);      
+      this.currentPanel = this.endMessage;
+      frame.add(this.currentPanel);      
    }
 }
 
