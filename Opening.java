@@ -46,7 +46,7 @@ public class Opening extends JPanel
       public void paintComponent(Graphics g)
       {
          super.paintComponent(g);
-         ImageIcon icon = new ImageIcon("images/openingpic.png");     
+         ImageIcon icon = new ImageIcon("openingpic.png");     
          icon.paintIcon(this, g, 0, 0);
       }
    }
