@@ -1,7 +1,13 @@
 class Driver
 {
-   public static void main(String[] args)
+    public static void main(String[] args)
    {
-      BlackjackView view = new BlackjackView();
+       TimeUnit time = TimeUnit.SECONDS;
+       BlackjackView game = new BlackjackView();   
+       game.displayMenu();
+       time.sleep(3);
+       game.displayGame();
+       time.sleep(3);
+       game.displayEndMessage();
    }
 }
