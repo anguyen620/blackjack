@@ -1,14 +1,22 @@
 public class Dealer extends AbstractPlayer
 {
    protected Hand hand;
+   protected Deck deck;
 
    public Dealer()
    {
       hand = new Hand();
+      deck = new Deck();
    }
 
    public Dealer(Hand hand)
    {
       this.hand = hand;
+      this.deck = deck;
+   }
+   
+   public void deal(AbstractPlayer player)
+   {
+      deck.deal(player);
    }
 }
