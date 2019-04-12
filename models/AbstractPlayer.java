@@ -1,10 +1,10 @@
 public abstract class AbstractPlayer
 {
-   protected int total;
+   protected int score;
 
    protected AbstractPlayer()
    {
-      total = 0;
+      score = 0;
    }
 
    public abstract void hit();
