@@ -1,0 +1,8 @@
+public class BlackjackModel
+{
+   Streak streak;
+   BlackjackModel()
+   {
+   
+   }
+}
