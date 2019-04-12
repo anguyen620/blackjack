@@ -3,6 +3,7 @@ import java.util.Random;
 
 public class Deck
 {
+   protected static final int MAX_DECK_SIZE = 52;
    protected ArrayList<Card> cards;
    protected Random rand;
 
