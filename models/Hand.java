@@ -19,6 +19,7 @@ public class Hand
    public void add(Card card)
    {
       cards.add(card);
+      handTotal++;
    }
 
    public ArrayList<Card> getHand()
