@@ -3,9 +3,13 @@ import java.io.Serializable;
 public class Streak implements Serializable
 {
    int streak;
-   Streak(int currentStreak)
+   Streak(String filename) throws Exception
    {
-      this.streak = currentStreak;
+      FileInputStream file = newFileInputStream(filename);
+      ObjectInputStream in = new ObjectInputStream(file);
+      in.readObject(this.streak);
+      in.close();
+      file.close();
    }
    public void resetStreak()
    {
