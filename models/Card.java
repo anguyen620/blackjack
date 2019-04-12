@@ -34,4 +34,15 @@ public class Card
    {
       return cardImage.getCardImage();
    }
+   
+   public static void main(String[] args)
+   {
+      String suit = "Hearts";
+      String path = "../images/image1.jpeg";
+      CardImage cardImage = new CardImage(path);
+      Card card = new Card(suit, 9, cardImage);
+      System.out.println("Card Suit: " + card.getSuit());
+      System.out.println("Card Value: " + card.getValue());
+   }
+   
 }
