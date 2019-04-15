@@ -18,4 +18,10 @@ public class Dealer extends AbstractPlayer
    {
       deck.deal(player);
    }
+   
+   @Override
+   public void hit()
+   {
+       
+   }
 }
