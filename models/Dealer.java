@@ -1,6 +1,5 @@
 public class Dealer extends AbstractPlayer
 {
-   protected Hand hand;
    protected Deck deck;
 
    public Dealer()
