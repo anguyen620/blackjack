@@ -24,11 +24,7 @@ public abstract class AbstractPlayer
       }
    }
    
-   public void hit()
-   {
-      // Ask Aidan how hit works
-      updateScore();    
-   }
+   public abstract void hit() {}
    
    public void stand() {} // do nothing and end turn
 }
