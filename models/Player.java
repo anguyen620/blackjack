@@ -48,16 +48,4 @@ public class Player extends AbstractPlayer
    {
        
    }
-   
-   @Override
-   public void hit()
-   {
-       
-   }
-   
-   @Override
-   public void stand()
-   {
-       
-   }
 }
