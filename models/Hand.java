@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Hand
 {
    protected ArrayList<Card> cards;
-   protected int handTotal;  // ask Aidan
 
    public Hand()
    {
