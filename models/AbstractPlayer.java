@@ -19,7 +19,7 @@ public abstract class AbstractPlayer
       return score;
    }
    
-   private void updateScore()
+   protected void updateScore()
    {
       ArrayList<Card> cards = hand.getHand();
       
