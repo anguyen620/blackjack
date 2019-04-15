@@ -6,7 +6,6 @@ public class Player extends AbstractPlayer
    public Player()
    {
       super();
-      hand = new Hand();
       funds = 0;
       bet = 0;
    }
