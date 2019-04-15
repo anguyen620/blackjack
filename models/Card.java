@@ -50,7 +50,7 @@ public class Card
    @Override
    public String toString()
    {
-      String output = Integer.toString(this.value + " of " + this.suit;
+      String output = Integer.toString(this.value) + " of " + this.suit;
       return output;
    }
    
