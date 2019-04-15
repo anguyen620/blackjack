@@ -1,26 +1,31 @@
 import javax.swing.JLabel;
 
+enum Suit
+{
+    Hearts, Spades, Clubs, Diamonds; 
+}
+
 public class Card
 {
    protected int value;
-   protected String suit;
+   protected Suit suit;
    protected CardImage cardImage;
 
-   public Card(String suit, int value, CardImage cardImage)
+   public Card(Suit suit, int value, CardImage cardImage)
    {
       this.suit = suit;
       this.value = value;
       this.cardImage = cardImage;
    }
    
-   public Card(String suit, int value, String path)
+   public Card(Suit suit, int value, String path)
    {
       this.suit = suit;
       this.value = value;
       this.cardImage = new CardImage(path);
    }
 
-   public String getSuit()
+   public Suit getSuit()
    {
       return suit;
    }
@@ -38,8 +43,15 @@ public class Card
    @Override
    public boolean equals(Object o)
    {
-       Card card = (Card) o;
-       return (this.suit == card.getSuit() && this.value == card.getValue());
+      Card card = (Card) o;
+      return (this.suit == card.getSuit() && this.value == card.getValue());
+   }
+   
+   @Override
+   public String toString()
+   {
+      String output = Integer.toString(this.value + " of " + this.suit;
+      return output;
    }
    
    public static void main(String[] args)
