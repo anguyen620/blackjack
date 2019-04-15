@@ -12,8 +12,7 @@ public class Player extends AbstractPlayer
 
    public Player(Hand hand, int funds)
    {
-      super();
-      this.hand = hand;
+      super(hand);
       this.funds = funds;
       this.bet = bet;
    }
