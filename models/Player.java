@@ -44,4 +44,21 @@ public class Player extends AbstractPlayer
    {
       funds = amount;
    }
+   
+   public void split()
+   {
+       
+   }
+   
+   @Override
+   public void hit()
+   {
+       
+   }
+   
+   @Override
+   public void stand()
+   {
+       
+   }
 }
