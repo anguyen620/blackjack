@@ -14,5 +14,4 @@ public abstract class AbstractPlayer
    
    public abstract void hit();
    public abstract void stand();
-   public abstract void split();
 }
