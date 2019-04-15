@@ -10,6 +10,7 @@ public class Dealer extends AbstractPlayer
 
    public Dealer(Hand hand, Deck deck)
    {
+      super(hand);
       this.hand = hand;
       this.deck = deck;
    }
