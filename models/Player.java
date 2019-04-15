@@ -1,6 +1,5 @@
 public class Player extends AbstractPlayer
 {
-   protected Hand hand;
    protected int funds;
    protected int bet;
 
