@@ -4,7 +4,7 @@ public class Dealer extends AbstractPlayer
 
    public Dealer()
    {
-      hand = new Hand();
+      super();
       deck = new Deck();
    }
 
