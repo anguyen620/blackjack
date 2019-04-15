@@ -39,7 +39,7 @@ public class Card
    public boolean equals(Object o)
    {
        Card card = (Card) o;
-       return (this.suit == card.getSuit && this.value == card.getValue());
+       return (this.suit == card.getSuit() && this.value == card.getValue());
    }
    
    public static void main(String[] args)
