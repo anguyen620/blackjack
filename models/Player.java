@@ -6,7 +6,7 @@ public class Player extends AbstractPlayer
       super();
    }
 
-   public Player(Hand hand, int funds)
+   public Player(Hand hand)
    {
       super(hand);
    }
