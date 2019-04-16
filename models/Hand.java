@@ -25,4 +25,10 @@ public class Hand
    {
       return cards;
    }
+   
+   public void removeCard(Card card)
+   {
+      cards.remove(card);
+   }
+
 }
