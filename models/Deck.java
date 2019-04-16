@@ -19,7 +19,7 @@ public class Deck
       this.rand = new Random();
    }
 
-   public Card giveCard(AbstractPlayer player)
+   public Card giveCard()
    {
       int deckSize = getSize();
       int index = rand.nextInt(deckSize);
