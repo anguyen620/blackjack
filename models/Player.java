@@ -11,9 +11,22 @@ public class Player extends AbstractPlayer
       super(hand);
    }
    
-   public void split()
-   {
-       
+   public void split(Card card)
+   {   
+      HashSet<Integer> set = new HashSet<>();
+
+      for (Card c: getHand())
+      {   
+         if (!set.contains(c.getValue()))
+         {   
+            set.add(c.getValue());
+         }   
+         else
+         {   
+            hand.remove(c);
+            addToHand(card);
+         }   
+      }   
    }
    
    @Override
