@@ -24,7 +24,7 @@ public class BlackjackModel
    protected Mode gameMode;
    protected Turn turn;
    
-   public BlackJackModel(Mode mode, Dealer dealer, ArrayList<AbstractPlayer> players)
+   public BlackjackModel(Mode mode, Dealer dealer, ArrayList<AbstractPlayer> players)
    {
       this.gameMode = mode;
       this.dealer = dealer;
