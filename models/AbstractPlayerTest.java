@@ -11,7 +11,7 @@ class AbstractPlayerTest
    @Test public void testUpdateScore()
    {  
       Hand hand = new Hand();
-      hand.add(SPADES, 10, new CardImage("./images/image2");
+      hand.add(SPADES, 10, new CardImage("./images/image2"));
       AbstractPlayer player = new AbstractPlayer(hand);
       player.updateScore();
       assertTrue(player.getScore() == 10);
