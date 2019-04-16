@@ -21,11 +21,14 @@ public class Dealer extends AbstractPlayer
    }
    
    @Override
-   public void hit()
+   public void hit(Card card)
    {
       if (getScore() < 17)
       {
-
+         addToHand(card);
       }
+      
+    //   System.out.println("Dealer should not be hitting right now"); // debug statement
+    //   return;
    }
 }
