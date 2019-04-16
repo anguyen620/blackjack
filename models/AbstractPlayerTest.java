@@ -1,7 +1,7 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 
-class AbstractPlayerTest.java
+class AbstractPlayerTest
 {
    @Test public void testConstructor()
    {
