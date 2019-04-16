@@ -17,16 +17,6 @@ public class Player extends AbstractPlayer
       this.bet = bet;
    }
 
-   public void addToHand(Card card)
-   {
-      hand.add(card);
-   }
-
-   public ArrayList<Card> getHand()
-   {
-      hand.getHand();
-   }
-
    public void changeBet(int newBet)
    {
       bet = newBet
