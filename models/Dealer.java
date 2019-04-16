@@ -23,6 +23,9 @@ public class Dealer extends AbstractPlayer
    @Override
    public void hit()
    {
-       
+      if (getScore() < 17)
+      {
+
+      }
    }
 }
