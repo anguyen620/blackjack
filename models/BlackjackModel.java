@@ -15,7 +15,7 @@ enum PlayerType
    USER, DEALER, COMPUTER;
 }
 
-public class BlackJackModel
+public class BlackjackModel
 {
    protected Dealer dealer;
    protected Player player;
