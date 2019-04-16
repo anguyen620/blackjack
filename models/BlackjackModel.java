@@ -60,19 +60,26 @@ public class BlackjackModel
       switch (gameMode)
       {
          case Mode.SINGLE_PLAYER:
-             if (turn == TURN.DEALER)
-             {
-                turn = Turn.USER;
-             }
-             else
-             {
-                turn = Turn.DEALER;
-             }
+            if (turn == Turn.DEALER)
+            {
+               turn = Turn.USER;
+            }
+            else
+            {
+               turn = Turn.DEALER;
+            }
 
-             break;
+            break;
 
          case Mode.VERSUS:
-             //todo: implement versus mode turns
+            if (turn == Turn.DEALER)
+            {
+               turn = Turn.COMPUTER;
+            }
+            else
+            {
+               turn = Turn.DEALER;
+            }
       }
    }
 
@@ -127,15 +134,5 @@ public class BlackjackModel
       }
 
       return winner;
-   }
-
-   public void compPlay()
-   {
-      // todo: ask
-   }
-
-   public void dealerPlay()
-   {
-      // todo: ask
    }
 }
