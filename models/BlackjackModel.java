@@ -104,10 +104,29 @@ public class BlackjackModel
       this.dealer = dealer;
    }
 
-   public AbstractPlaayer getWinner()
+   public AbstractPlayer getWinner()
    {
-      // todo: ask
-      return player;
+      AbstractPlayer winner;
+
+      if (compPlayer)
+      {
+         if(compPlayer.getScore() > dealer.getScore() && compPlayer.getScore() > player.getScore())
+         {
+            winner = compPlayer;
+            return winner;
+         }
+      }
+
+      if (player.getScore() >= dealer.getScore())
+      {
+         winner = player;
+      }
+      else
+      {
+         winner = dealer
+      }
+
+      return winner;
    }
 
    public void compPlay()
