@@ -2,7 +2,7 @@ import javax.swing.JLabel;
 
 enum Suit
 {
-    Hearts, Spades, Clubs, Diamonds; 
+    HEARTS, SPADES, CLUBS, DIAMONDS; 
 }
 
 public class Card
