@@ -1,25 +1,40 @@
+import java.io.*;
 import java.io.Serializable;
 
 public class Streak implements Serializable
 {
    int streak;
    String fileName;
-   Streak(String filename) throws Exception
+   Streak(String filename)
    {
       this.fileName = filename;
-      FileInputStream file = newFileInputStream(filename);
-      ObjectInputStream in = new ObjectInputStream(file);
-      in.readObject(this.streak);
-      in.close();
-      file.close();
+      try
+      {
+         FileInputStream file = new FileInputStream(filename);
+         ObjectInputStream in = new ObjectInputStream(file);
+         this.streak = (Integer)in.readObject();
+         in.close();
+         file.close();
+      }
+      catch (Exception error)
+      {
+         System.out.println("Cannot retrieve streak data");
+      }
    }
    public void saveToFile()
    {
-      FileOutputStream file = new FileOutputStream(fileName);
-      ObjectOutputStream out = new ObjectOutputStream(file);
-      out.write(this.streak);
-      out.close();
-      file.close();
+      try
+      {
+         FileOutputStream file = new FileOutputStream(fileName);
+         ObjectOutputStream out = new ObjectOutputStream(file);
+         out.write(this.streak);
+         out.close();
+         file.close();
+      }
+      catch (IOException io)
+      {
+         System.out.println("Cannot save streak data");
+      }
    }
    public void resetStreak()
    {
@@ -34,3 +49,4 @@ public class Streak implements Serializable
       this.streak = this.streak + 1;
    }
 }
+
