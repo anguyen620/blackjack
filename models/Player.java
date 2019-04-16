@@ -19,7 +19,7 @@ public class Player extends AbstractPlayer
 
    public void changeBet(int newBet)
    {
-      bet = newBet
+      bet = newBet;
    }
 
    public int getBet()
