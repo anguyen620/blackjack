@@ -26,12 +26,13 @@ public abstract class AbstractPlayer
 
    public ArrayList<Card> getHand()
    {
-      hand.getHand();
+      return hand.getHand();
    }
    
-   protected void updateScore()
+   protected void calcScore()
    {
       ArrayList<Card> cards = hand.getHand();
+      score = 0;
       
       for (Card card: cards)
       {
