@@ -130,7 +130,7 @@ public class BlackjackModel
       }
       else
       {
-         winner = dealer
+         winner = dealer;
       }
 
       return winner;
