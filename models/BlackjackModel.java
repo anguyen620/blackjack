@@ -37,7 +37,7 @@ public class BlackjackModel
       }
    }
 
-   public BlackJackModel(Mode mode)
+   public BlackjackModel(Mode mode)
    {
       gameMode = mode;
       dealer = new Dealer();
