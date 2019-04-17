@@ -87,20 +87,24 @@ public class BlackjackModel
 
    public int score(PlayerType type)
    {
+      int result = -1;
+      
       switch (type)
       {
          case USER:
-            return player.getScore();
+            result = player.getScore();
             break;
 
          case DEALER:
-            return dealer.getScore();
+            result = dealer.getScore();
             break;
 
          case COMPUTER:
-            return compPlayer.getScore();
+            result = compPlayer.getScore();
             break;
       }
+      
+      return result;
    }
 
    public void setComputerPlayer(Player player)
