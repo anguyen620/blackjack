@@ -3,15 +3,18 @@ import static org.junit.Assert.*;
 
 class AbstractPlayerTest
 {
-   @Test public void testConstructor()
+   @Test 
+   public void testConstructor()
    {
       AbstractPlayer player = new AbstractPlayer();
       assertTrue(player.getScore() == 0);
    }
-   @Test public void testUpdateScore()
+   
+   @Test 
+   public void testUpdateScore()
    {  
       Hand hand = new Hand();
-      hand.add(new Card(SPADES, 10, new CardImage("./images/image2")));
+      hand.add(new Card(Card.SPADES, 10, new CardImage("./images/image2")));
       AbstractPlayer player = new AbstractPlayer(hand);
       player.updateScore();
       assertTrue(player.getScore() == 10);
