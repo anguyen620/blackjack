@@ -31,7 +31,7 @@ class StreakTest
       {
          System.out.println("Cannot retrieve streak data");
       }
-      assertTrue(temp == 1);
+      assertTrue(streak.getStreak() == 1);
    }
 
 //Depends upon constructor working
