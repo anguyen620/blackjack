@@ -14,21 +14,21 @@ public class Deck
       for (int i = 0; i < 13; i++)
       {
           String temp = "";
-          if (i = 0)
+          if (i == 0)
               temp = "ace";
-          else if (i = 10)
+          else if (i == 10)
               temp = "jack";
-          else if (i = 11)
+          else if (i == 11)
               temp = "queen";
-          else if (i = 12) 
+          else if (i == 12) 
               temp = "king";
           else
               temp = Integer.toString(i);
               
-          cards.add(new Card(SPADES, i, new CardImage("./images/"+temp+"_of_spades.png")));
-          cards.add(new Card(HEARTS, i, new CardImage("./images/"+temp+"_of_hearts.png")));
-          cards.add(new Card(DIAMONDS, i, new CardImage("./images/"+temp+"_of_diamonds.png")));
-          cards.add(new Card(CLUBS, i, new CardImage("./images/"+temp+"_of_clubs")));
+          cards.add(new Card(Suit.SPADES, i, new CardImage("./images/"+temp+"_of_spades.png")));
+          cards.add(new Card(Suit.HEARTS, i, new CardImage("./images/"+temp+"_of_hearts.png")));
+          cards.add(new Card(Suit.DIAMONDS, i, new CardImage("./images/"+temp+"_of_diamonds.png")));
+          cards.add(new Card(Suit.CLUBS, i, new CardImage("./images/"+temp+"_of_clubs")));
       }
    }
    public void deal(AbstractPlayer player)
