@@ -28,7 +28,7 @@ public class CardImageTest
       BufferedImage pic = ImageIO.read(file);
       JLabel image = new JLabel(new ImageIcon(pic));
 
-      CardImage cardImage = new CardImage(path);
+      CardImage cardImage = new CardImage(PATH);
 
       assertEquals(image, cardImage.getCardImage());
    }
