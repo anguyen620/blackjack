@@ -10,12 +10,12 @@ public abstract class AbstractPlayer
       score = 0;
       hand = new Hand();
    }
-  /* 
+ 
    protected AbstractPlayer(Hand hand)
    {
       this.hand = hand;
    }
-*/
+
    public int getScore()
    {
       return score;
