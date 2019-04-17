@@ -31,6 +31,7 @@ public class Player extends AbstractPlayer
       }   
    }
    
+   @Override
    public void hit(Card card)
    {
        addToHand(card);
