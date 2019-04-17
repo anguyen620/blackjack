@@ -57,7 +57,7 @@ public class BlackjackModel
       }
    }
 */
-   private void updateTurn()
+   public void updateTurn()
    {
       switch (gameMode)
       {
