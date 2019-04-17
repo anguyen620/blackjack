@@ -31,7 +31,7 @@ public abstract class AbstractPlayer
       return hand.getHand();
    }
    
-   protected void calcScore()
+   protected void updateScore()
    {
       ArrayList<Card> cards = hand.getHand();
       score = 0;
