@@ -32,7 +32,7 @@ class DeckTest
    public void testGetCard()
    {
       ArrayList<Card> cards = new ArrayList<Card>();
-      Card card = new Card(Suit.SPADE, 10, "./images/image2");
+      Card card = new Card(Suit.SPADES, 10, "./images/image2");
       cards.add(card);
       Deck deck = new Deck(cards);
       assertTrue(card == deck.getCard(0));
@@ -42,7 +42,7 @@ class DeckTest
    public void testRemoveCard()
    {
       ArrayList<Card> cards = new ArrayList<Card>();
-      Card card = new Card(Suit.SPADE, 10, "./images/image2");
+      Card card = new Card(Suit.SPADES, 10, "./images/image2");
       cards.add(card);
       Deck deck = new Deck(cards);
       if (deck.getSize() == 1)
