@@ -38,7 +38,7 @@ public class BlackjackModel
          this.compPlayer = (Player) players.get(1);
       }
    }
-
+/*
    public BlackjackModel(Mode mode)
    {
       gameMode = mode;
@@ -56,7 +56,7 @@ public class BlackjackModel
             compPlayer = new Player();
       }
    }
-
+*/
    private void updateTurn()
    {
       switch (gameMode)
