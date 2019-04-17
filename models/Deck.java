@@ -12,13 +12,13 @@ public class Deck
       cards = new ArrayList<>();
       rand = new Random();
    }
-
+/*
    public Deck(ArrayList<Card> cards)
    {
       this.cards = cards;
       this.rand = new Random();
    }
-
+*/
    public void deal(AbstractPlayer player)
    {
       int deckSize = getSize();
