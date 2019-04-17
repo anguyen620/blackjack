@@ -117,7 +117,7 @@ public class BlackjackModel
    {
       AbstractPlayer winner;
 
-      if (compPlayer)
+      if (compPlayer != null)
       {
          if(compPlayer.getScore() > dealer.getScore() && compPlayer.getScore() > player.getScore())
          {
