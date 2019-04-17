@@ -3,13 +3,7 @@ import static org.junit.Assert.*;
 
 class AbstractPlayerTest
 {
-   @Test 
-   public void testConstructor()
-   {
-      AbstractPlayer player = new AbstractPlayer();
-      assertTrue(player.getScore() == 0);
-   }
-   
+  
    @Test 
    public void testUpdateScore()
    {  
