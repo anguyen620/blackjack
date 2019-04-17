@@ -42,7 +42,7 @@ public abstract class AbstractPlayer
       }
    }
    
-   public abstract void hit();
+   public abstract void hit(Card card);
    
    public void stand() {} // do nothing and end turn
 }
