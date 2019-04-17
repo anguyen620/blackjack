@@ -56,7 +56,7 @@ public class Card
    
    public static void main(String[] args)
    {
-      String suit = "Hearts";
+      Suit suit = Suit.HEARTS;
       String path = "../images/image1.jpeg";
       CardImage cardImage = new CardImage(path);
       Card card = new Card(suit, 9, cardImage);
