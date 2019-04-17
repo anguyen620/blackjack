@@ -18,11 +18,12 @@ class StreakTest
       Streak streak = new Streak("streak.dat");
       streak.increment();
       streak.saveToFile();
+      int temp;
       try
       {
          FileInputStream file = new FileInputStream("streak.dat");
          ObjectInputStream in = new ObjectInputStream(file);
-         int temp = (Integer)in.readObject();
+         temp = (Integer)in.readObject();
          in.close();
          file.close();
       }
