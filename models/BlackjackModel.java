@@ -24,12 +24,14 @@ public class BlackjackModel
    protected Mode gameMode;
    protected Turn turn;
    
+   protected static final String FILENAME = "statistics.txt";
+   
    public BlackjackModel(Mode mode, Dealer dealer, ArrayList<AbstractPlayer> players)
    {
       this.gameMode = mode;
       this.dealer = dealer;
       this.player = players.get(0);
-      this.statistics = new Streak();
+      this.statistics = new Streak(FILENAME);
 
       if (players.size() > 1)
       {
@@ -42,7 +44,7 @@ public class BlackjackModel
       gameMode = mode;
       dealer = new Dealer();
       player = new Player();
-      statistics = new Streak();
+      statistics = new Streak(FILENAME);
 
       switch (gameMode)
       {
