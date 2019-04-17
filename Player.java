@@ -7,12 +7,12 @@ public class Player extends AbstractPlayer
    {
       super();
    }
-/*
+   
    public Player(Hand hand)
    {
       super(hand);
    }
-*/   
+  
    public void split(Card card)
    {   
       HashSet<Integer> set = new HashSet<>();
