@@ -6,7 +6,7 @@ class DeckTest
    @Test public void testConstructor()
    {
       Deck deck = new Deck();
-      assertTrue(deck.getSize() == 0);
+      assertFalse(deck.getSize() == 0);
    }
    @Test public void testDeal()
    {
@@ -23,7 +23,7 @@ class DeckTest
    @Test public void testGetCard()
    {
       ArrayList<Card> cards = new ArrayList<Card>();
-      Card card = new Card(SPADE, 10, "./images/ace_of_hearts.png")
+      Card card = new Card(SPADE, 10, "./images/image2")
       cards.add(card);
       Deck deck = new Deck(cards);
       assertTrue(card == deck.getCard(0));
@@ -31,7 +31,7 @@ class DeckTest
    @Test public void testRemoveCard()
    {
       ArrayList<Card> cards = new ArrayList<Card>();
-      Card card = new Card(SPADE, 10, "./images/ace_of_hearts.png")
+      Card card = new Card(SPADE, 10, "./images/image2")
       cards.add(card);
       Deck deck = new Deck(cards);
       if (deck.getSize()) == 1)
