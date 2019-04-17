@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class AbstractPlayer
 {
    protected int score;
@@ -19,9 +21,20 @@ public abstract class AbstractPlayer
       return score;
    }
    
+   public void addToHand(Card card)
+   {
+      hand.add(card);
+   }
+
+   public ArrayList<Card> getHand()
+   {
+      return hand.getHand();
+   }
+   
    protected void updateScore()
    {
       ArrayList<Card> cards = hand.getHand();
+      score = 0;
       
       for (Card card: cards)
       {
@@ -29,7 +42,7 @@ public abstract class AbstractPlayer
       }
    }
    
-   public abstract void hit() {}
+   public abstract void hit(Card card);
    
    public void stand() {} // do nothing and end turn
 }

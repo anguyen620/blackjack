@@ -1,4 +1,6 @@
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+
 import javax.imageio.ImageIO;
 
 import java.awt.image.BufferedImage;

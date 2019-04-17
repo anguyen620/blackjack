@@ -24,12 +24,14 @@ public class BlackjackModel
    protected Mode gameMode;
    protected Turn turn;
    
+   protected static final String FILENAME = "statistics.txt";
+   
    public BlackjackModel(Mode mode, Dealer dealer, ArrayList<AbstractPlayer> players)
    {
       this.gameMode = mode;
       this.dealer = dealer;
       this.player = players.get(0);
-      this.statistics = new Streak();
+      this.statistics = new Streak(FILENAME);
 
       if (players.size() > 1)
       {
@@ -42,15 +44,15 @@ public class BlackjackModel
       gameMode = mode;
       dealer = new Dealer();
       player = new Player();
-      statistics = new Streak();
+      statistics = new Streak(FILENAME);
 
       switch (gameMode)
       {
-         case Mode.SINGLE_PLAYER:
+         case SINGLE_PLAYER:
             compPlayer = null;
             break;
 
-         case Mode.VERSUS:
+         case VERSUS:
             compPlayer = new Player();
       }
    }
@@ -59,39 +61,50 @@ public class BlackjackModel
    {
       switch (gameMode)
       {
-         case Mode.SINGLE_PLAYER:
-             if (turn == TURN.DEALER)
-             {
-                turn = Turn.USER;
-             }
-             else
-             {
-                turn = Turn.DEALER;
-             }
+         case SINGLE_PLAYER:
+            if (turn == Turn.DEALER)
+            {
+               turn = Turn.USER;
+            }
+            else
+            {
+               turn = Turn.DEALER;
+            }
 
-             break;
+            break;
 
-         case Mode.VERSUS:
-             //todo: implement versus mode turns
+         case VERSUS:
+            if (turn == Turn.DEALER)
+            {
+               turn = Turn.COMPUTER;
+            }
+            else
+            {
+               turn = Turn.DEALER;
+            }
       }
    }
 
    public int score(PlayerType type)
    {
+      int result = -1;
+      
       switch (type)
       {
-         case Player.USER:
-            return player.getScore();
+         case USER:
+            result = player.getScore();
             break;
 
-         case Player.DEALER:
-            return dealer.getScore();
+         case DEALER:
+            result = dealer.getScore();
             break;
 
-         case Player.COMPUTER:
-            return compPlayer.getScore();
+         case COMPUTER:
+            result = compPlayer.getScore();
             break;
       }
+      
+      return result;
    }
 
    public void setComputerPlayer(Player player)
@@ -104,19 +117,28 @@ public class BlackjackModel
       this.dealer = dealer;
    }
 
-   public AbstractPlaayer getWinner()
+   public AbstractPlayer getWinner()
    {
-      // todo: ask
-      return player;
-   }
+      AbstractPlayer winner;
 
-   public void compPlay()
-   {
-      // todo: ask
-   }
+      if (compPlayer != null)
+      {
+         if(compPlayer.getScore() > dealer.getScore() && compPlayer.getScore() > player.getScore())
+         {
+            winner = compPlayer;
+            return winner;
+         }
+      }
 
-   public void dealerPlay()
-   {
-      // todo: ask
+      if (player.getScore() >= dealer.getScore())
+      {
+         winner = player;
+      }
+      else
+      {
+         winner = dealer;
+      }
+
+      return winner;
    }
 }

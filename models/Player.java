@@ -1,50 +1,34 @@
+import java.util.HashSet;
+
 public class Player extends AbstractPlayer
 {
-   protected int funds;
-   protected int bet;
 
    public Player()
    {
       super();
-      funds = 0;
-      bet = 0;
    }
 
-   public Player(Hand hand, int funds)
+   public Player(Hand hand)
    {
       super(hand);
-      this.funds = funds;
-      this.bet = bet;
-   }
-
-   public void addToHand(Card card)
-   {
-      hand.add(card);
-   }
-
-   public ArrayList<Card> getHand()
-   {
-      hand.getHand();
-   }
-
-   public void changeBet(int newBet)
-   {
-      bet = newBet
-   }
-
-   public int getBet()
-   {
-      return bet;
-   }
-
-   public void setFunds(int amount)
-   {
-      funds = amount;
    }
    
-   public void split()
-   {
-       
+   public void split(Card card)
+   {   
+      HashSet<Integer> set = new HashSet<>();
+
+      for (Card c: getHand())
+      {   
+         if (!set.contains(c.getValue()))
+         {   
+            set.add(c.getValue());
+         }   
+         else
+         {   
+            hand.removeCard(c);
+            addToHand(card);
+         }   
+      }   
    }
    
    @Override
