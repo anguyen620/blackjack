@@ -34,7 +34,7 @@ public class CardImageTest
    }
 
    @Test
-   public void getCardImageTest()
+   public void getCardImageTest() throws IOException
    {
       File file = new File(PATH);
       BufferedImage pic = ImageIO.read(file);
