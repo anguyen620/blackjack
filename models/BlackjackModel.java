@@ -46,11 +46,11 @@ public class BlackjackModel
 
       switch (gameMode)
       {
-         case Mode.SINGLE_PLAYER:
+         case SINGLE_PLAYER:
             compPlayer = null;
             break;
 
-         case Mode.VERSUS:
+         case VERSUS:
             compPlayer = new Player();
       }
    }
@@ -59,7 +59,7 @@ public class BlackjackModel
    {
       switch (gameMode)
       {
-         case Mode.SINGLE_PLAYER:
+         case SINGLE_PLAYER:
             if (turn == Turn.DEALER)
             {
                turn = Turn.USER;
@@ -71,7 +71,7 @@ public class BlackjackModel
 
             break;
 
-         case Mode.VERSUS:
+         case VERSUS:
             if (turn == Turn.DEALER)
             {
                turn = Turn.COMPUTER;
@@ -87,15 +87,15 @@ public class BlackjackModel
    {
       switch (type)
       {
-         case Player.USER:
+         case USER:
             return player.getScore();
             break;
 
-         case Player.DEALER:
+         case DEALER:
             return dealer.getScore();
             break;
 
-         case Player.COMPUTER:
+         case COMPUTER:
             return compPlayer.getScore();
             break;
       }
