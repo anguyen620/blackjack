@@ -14,16 +14,17 @@ public class Deck
       for (int i = 0; i < 13; i++)
       {
           String temp = "";
-          if (i=0)
+          if (i = 0)
               temp = "ace";
-          elif (i=10)
+          else if (i = 10)
               temp = "jack";
-          elif (i=11)
+          else if (i = 11)
               temp = "queen";
-          elif (i=12) 
+          else if (i = 12) 
               temp = "king";
           else
               temp = Integer.toString(i);
+              
           cards.add(new Card(SPADES, i, new CardImage("./images/"+temp+"_of_spades.png")));
           cards.add(new Card(HEARTS, i, new CardImage("./images/"+temp+"_of_hearts.png")));
           cards.add(new Card(DIAMONDS, i, new CardImage("./images/"+temp+"_of_diamonds.png")));
@@ -39,7 +40,7 @@ public class Deck
       player.addToHand(card);
    }
 
-/*   public Card giveCard() JUNK - MIGHT NEED FOR LATER IDEAS (DO NOT DELETE)
+/*   public Card giveCard() 
    {
       int deckSize = getSize();
       int index = rand.nextInt(deckSize);
