@@ -30,12 +30,12 @@ public class BlackjackModel
    {
       this.gameMode = mode;
       this.dealer = dealer;
-      this.player = players.get(0);
+      this.player = (Player) players.get(0);
       this.statistics = new Streak(FILENAME);
 
       if (players.size() > 1)
       {
-         this.compPlayer = players.get(1);
+         this.compPlayer = (Player) players.get(1);
       }
    }
 
