@@ -25,7 +25,7 @@ public class Player extends AbstractPlayer
          }   
          else
          {   
-            hand.remove(c);
+            hand.removeCard(c);
             addToHand(card);
          }   
       }   
