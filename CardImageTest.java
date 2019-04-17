@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class CardImage
+public class CardImageTest
 {
    private static final String PATH = "../../images/image1.jpeg";
 
