@@ -30,13 +30,6 @@ public class Deck
           cards.add(new Card(CLUBS, i, new CardImage("./images/"+temp+"_of_clubs")));
       }
    }
-/*
-   public Deck(ArrayList<Card> cards)
-   {
-      this.cards = cards;
-      this.rand = new Random();
-   }
-*/
    public void deal(AbstractPlayer player)
    {
       int deckSize = getSize();
