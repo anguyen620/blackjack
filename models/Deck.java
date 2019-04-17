@@ -28,7 +28,7 @@ public class Deck
       player.addToHand(card);
    }
 
-   public Card giveCard()
+/*   public Card giveCard() JUNK - MIGHT NEED FOR LATER IDEAS (DO NOT DELETE)
    {
       int deckSize = getSize();
       int index = rand.nextInt(deckSize);
@@ -37,7 +37,7 @@ public class Deck
       
       return card;
    }
-
+*/
    public int getSize()
    {
       return cards.size();
