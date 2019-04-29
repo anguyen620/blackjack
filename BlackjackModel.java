@@ -57,6 +57,37 @@ public class BlackjackModel
       }
    }
 
+   public void hit(PlayerType type)
+   {
+      switch (type)
+      {
+         case USER:
+            player.hit();
+	 case DEALER:
+	    dealer.hit();
+	 case COMPUTER:
+            compPlayer.hit();
+      }
+   }
+
+   public void dealerPlay()
+   {
+      while (score(PlayerType.DEALER) <= 17)
+      {
+         hit(PlayerType.DEALER);
+      }
+   }
+
+   public void compPlay()
+   {
+      while (score(PlayerType.COMPUTER) <= 15)
+      {
+         hit(PlayerType.COMPUTER);
+      }
+
+      // TODO: Optional - set 50/50 chance for comp to hit/stand after reaching 15
+   }
+
    public void updateTurn()
    {
       switch (gameMode)
