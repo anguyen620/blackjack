@@ -26,4 +26,42 @@ public class BlackjackController
    {
       addModel(BlackjackModel(Mode.VERSUS));
    }
+
+   public void playerHit()
+   {
+      model.hit(PlayerType.USER);
+   }
+
+   public void playerSplit()
+   {
+      model.split(PlayerType.USER);
+   }
+
+   public void playerStand()
+   {
+      model.stand(PlayerType.USER);
+      
+      if (model.gameMode == Mode.VERSUS)
+      {
+         model.compPlay();
+      }
+
+      model.dealerPlay();
+   }
+
+   public ArrayList<int> getScores()
+   {
+      ArrayList<int> scores = new ArrayList<int>();
+
+      scores.add(model.score(PlayerType.USER));
+
+      scores.add(model.score(PlayerType.DEALER));
+
+      if (model.gameMode == Mode.VERSUS)
+      {
+         scores.add(model.score(PlayerType.COMPUTER));
+      }
+
+      return scores;
+   }
 }
