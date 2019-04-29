@@ -25,19 +25,6 @@ public class BlackjackModel
    protected Turn turn;
    
    protected static final String FILENAME = "statistics.txt";
-   
-   public BlackjackModel(Mode mode, Dealer dealer, ArrayList<AbstractPlayer> players)
-   {
-      this.gameMode = mode;
-      this.dealer = dealer;
-      this.player = (Player) players.get(0);
-      this.statistics = new Streak(FILENAME);
-
-      if (players.size() > 1)
-      {
-         this.compPlayer = (Player) players.get(1);
-      }
-   }
 
    public BlackjackModel(Mode mode)
    {
@@ -70,12 +57,27 @@ public class BlackjackModel
       }
    }
 
+   public void stand(PlayerType type)
+   {
+      switch (type)
+      {
+         case USER:
+	    player.stand();
+	 case DEALER:
+	    dealer.stand();
+	 case COMPUTER:
+	    compPlayer.stand();
+      }
+   }
+
    public void dealerPlay()
    {
       while (score(PlayerType.DEALER) <= 17)
       {
          hit(PlayerType.DEALER);
       }
+
+      stand(PlayerType.DEALER);
    }
 
    public void compPlay()
@@ -86,6 +88,8 @@ public class BlackjackModel
       }
 
       // TODO: Optional - set 50/50 chance for comp to hit/stand after reaching 15
+   
+      stand(PlayerType.COMPUTER);
    }
 
    public void updateTurn()
