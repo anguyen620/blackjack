@@ -16,4 +16,14 @@ public class BlackjackController
    {
       this.model = model;
    }
+
+   public void playSinglePlayer()
+   {
+      addModel(BlackjackModel(Mode.SINGLE_PLAYER));
+   }
+
+   public void playComp()
+   {
+      addModel(BlackjackModel(Mode.VERSUS));
+   }
 }
