@@ -38,12 +38,13 @@ public class Deck
       this.rand = new Random();
    }
    
-   public void popCard()
+   public Card popCard()
    {
       int deckSize = getSize();
       int index = rand.nextInt(deckSize);
       Card card = getCard(index);
       removeCard(card);
+
       return card;
    }
 
