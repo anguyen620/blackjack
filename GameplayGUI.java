@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
+import java.awt.event.ActionListener;
 
 import java.io.File;
 import java.io.IOException;
@@ -107,6 +108,11 @@ public class GameplayGUI extends JPanel
       this.add(middlePanel);
       this.add(playerPanel);
    }
+   
+   public void addListener(JComponent component, ActionListener listener)
+   {   
+      component.addActionListener(listener);
+   } 
    
    // Test GameplayGUI
    public static void main(String[] args)
