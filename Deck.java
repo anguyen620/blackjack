@@ -9,27 +9,46 @@ public class Deck
 
    public Deck()
    {
-      cards = new ArrayList<Card>();
+      cards = initializeDeck();
       rand = new Random();
+   }
+
+   private ArrayList<Card> initializeDeck()
+   {
+      ArrayList<Card> deck = new ArrayList<>();
+   
       for (int i = 0; i < 13; i++)
       {
           String temp = "";
+
           if (i == 0)
-              temp = "ace";
+          {
+             temp = "ace";
+          }
           else if (i == 10)
-              temp = "jack";
+          {
+             temp = "jack";
+          }
           else if (i == 11)
-              temp = "queen";
+          {
+             temp = "queen";
+          }
           else if (i == 12) 
-              temp = "king";
+          {
+             temp = "king";
+          }
           else
-              temp = Integer.toString(i);
+          {
+             temp = Integer.toString(i);
+          }
               
-          cards.add(new Card(Suit.SPADES, i, new CardImage("./images/"+temp+"_of_spades.png")));
-          cards.add(new Card(Suit.HEARTS, i, new CardImage("./images/"+temp+"_of_hearts.png")));
-          cards.add(new Card(Suit.DIAMONDS, i, new CardImage("./images/"+temp+"_of_diamonds.png")));
-          cards.add(new Card(Suit.CLUBS, i, new CardImage("./images/"+temp+"_of_clubs")));
+          deck.add(new Card(Suit.SPADES, i, new CardImage("./images/"+temp+"_of_spades.png")));
+          deck.add(new Card(Suit.HEARTS, i, new CardImage("./images/"+temp+"_of_hearts.png")));
+          deck.add(new Card(Suit.DIAMONDS, i, new CardImage("./images/"+temp+"_of_diamonds.png")));
+          deck.add(new Card(Suit.CLUBS, i, new CardImage("./images/"+temp+"_of_clubs")));
       }
+
+      return deck;
    }
    
    public Deck(ArrayList<Card> cards)
