@@ -3,16 +3,18 @@ import java.io.Serializable;
 
 public class Streak implements Serializable
 {
-   int streak;
-   String fileName;
-   Streak(String filename)
+   protected int streak;
+   protected String fileName;
+
+   public Streak(String filename)
    {
       this.fileName = filename;
       try
       {
          FileInputStream file = new FileInputStream(filename);
          ObjectInputStream in = new ObjectInputStream(file);
-         this.streak = (Integer)in.readObject();
+         this.streak = (Integer) in.readObject();
+         
          in.close();
          file.close();
       }
@@ -21,6 +23,7 @@ public class Streak implements Serializable
          System.out.println("Cannot retrieve streak data");
       }
    }
+
    public void saveToFile()
    {
       try
@@ -28,6 +31,7 @@ public class Streak implements Serializable
          FileOutputStream file = new FileOutputStream(fileName);
          ObjectOutputStream out = new ObjectOutputStream(file);
          out.write(this.streak);
+         
          out.close();
          file.close();
       }
@@ -36,17 +40,21 @@ public class Streak implements Serializable
          System.out.println("Cannot save streak data");
       }
    }
+
    public void resetStreak()
    {
       this.streak = 0;
    }
+
    public int getStreak()
    {
       return this.streak;
    }
+
    public void increment()
    {
-      this.streak = this.streak + 1;
+      this.streak++; 
    }
+
 }
 
