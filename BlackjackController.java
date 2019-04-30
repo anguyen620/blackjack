@@ -1,3 +1,5 @@
+import java.awt.event.ActionListener;
+
 /*
  * BlackjackController
  * Controller contains attributes for both View and Model
@@ -64,4 +66,60 @@ public class BlackjackController
 
       return scores;
    }
+
+   singleModeListener = new ActionListener() {
+      
+       @Override
+       public void actionPerformed(ActionEvent e)
+       {
+    
+       }
+   }
+
+   
+   dualModeListener = new ActionListener() {
+      
+       @Override
+       public void actionPerformed(ActionEvent e)
+       {
+    
+       }
+   }
+
+   helpButtonListener = new ActionListener() {
+      
+       @Override
+       public void actionPerformed(ActionEvent e)
+       {
+    
+       }
+   }
+
+   hitListener = new ActionListener() {
+      
+       @Override
+       public void actionPerformed(ActionEvent e)
+       {
+    
+       }
+   }
+
+   splitModeListener = new ActionListener() {
+      
+       @Override
+       public void actionPerformed(ActionEvent e)
+       {
+    
+       }
+   }
+
+   standListener = new ActionListener() {
+      
+       @Override
+       public void actionPerformed(ActionEvent e)
+       {
+    
+       }
+   }
 }
+
