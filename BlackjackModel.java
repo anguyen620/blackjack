@@ -23,7 +23,8 @@ public class BlackjackModel
    protected Streak statistics;
    protected Mode gameMode;
    protected Turn turn;
-   
+   protected Deck deck;   
+
    protected static final String FILENAME = "statistics.txt";
 
    public BlackjackModel(Mode mode)
@@ -32,6 +33,7 @@ public class BlackjackModel
       dealer = new Dealer();
       player = new Player();
       statistics = new Streak(FILENAME);
+      deck = new Deck();
 
       switch (gameMode)
       {
@@ -49,11 +51,11 @@ public class BlackjackModel
       switch (type)
       {
          case USER:
-            player.hit();
+            player.hit(deck.popCard());
 	 case DEALER:
-	    dealer.hit();
+	    dealer.hit(deck.popCard());
 	 case COMPUTER:
-            compPlayer.hit();
+            compPlayer.hit(deck.popCard());
       }
    }
 
@@ -72,11 +74,10 @@ public class BlackjackModel
 
    public void dealerPlay()
    {
-      while (score(PlayerType.DEALER) <= 17)
+      while (score(PlayerType.DEALER) < 17)
       {
-         hit(PlayerType.DEALER);
+         dealer.hit(deck.popCard());
       }
-
       stand(PlayerType.DEALER);
    }
 
