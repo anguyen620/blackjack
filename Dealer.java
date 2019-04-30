@@ -3,7 +3,7 @@ public class Dealer extends AbstractPlayer
    public Dealer()
    {
       super();
-      deck = new Deck();
+      //deck = new Deck();
    }
 
    public Dealer(Hand hand)
