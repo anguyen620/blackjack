@@ -50,5 +50,25 @@ public class Opening extends JPanel
       add(this.middle);
       add(this.bottom);
    }
+   
+   public JButton getHelpButton()
+   {
+      return help;
+   }
+   
+   public JButton getSingleModeButton()
+   {
+      return option1;
+   }
+   
+   public JButton getDualModeButton()
+   {
+      return option2;
+   }
+   
+   public void addListener(JComponent component, ActionListener listener)
+   {   
+      component.addActionListener(listener);
+   } 
 }
 
