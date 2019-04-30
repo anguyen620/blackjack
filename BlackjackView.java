@@ -51,9 +51,39 @@ public class BlackjackView
       frame.add(this.endMessage);      
    }
    
-   public void addListener(JComponent component, ActionListener listener)
+   public void addSinglePlayerModeListener(ActionListener listener)
    {   
-      component.addActionListener(listener);
-   } 
+      opening.singlePlayerListener(listener);
+   }
+
+   public void addVersusModeListener(ActionListener listener)
+   {   
+      opening.dualPlayerListener(listener);
+   }
+
+   public void addHelpListener(ActionListener listener)
+   {   
+      opening.helpButtonListener(listener);
+   }
+
+   public void addSplitListener(ActionListener listener)
+   {
+      gameGUI.addSplitListener(listener) ;
+   }
+
+   public void addHitListener(ActionListener listener)
+   {
+      gameGUI.addHitListener(listener) ;
+   }
+
+   public void addStandListener(ActionListener listener)
+   {
+      gameGUI.addStandListener(listener) ;
+   }
+
+   public void displayHelp()
+   {
+      opening.displayHelp();
+   }
 }
 
