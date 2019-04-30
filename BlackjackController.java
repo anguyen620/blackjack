@@ -1,4 +1,7 @@
 import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import java.util.ArrayList;
 
 /*
  * BlackjackController
@@ -8,6 +11,13 @@ public class BlackjackController
 {
    BlackjackView view;
    BlackjackModel model;
+
+   public BlackjackController(BlackjackView view)
+   {
+      this.view = view;
+
+      initResponsiveness(this.view);
+   }
 
    public void addView(BlackjackView view)
    {
@@ -21,12 +31,12 @@ public class BlackjackController
 
    public void playSinglePlayer()
    {
-      addModel(BlackjackModel(Mode.SINGLE_PLAYER));
+      addModel(new BlackjackModel(Mode.SINGLE_PLAYER));
    }
 
    public void playComp()
    {
-      addModel(BlackjackModel(Mode.VERSUS));
+      addModel(new BlackjackModel(Mode.VERSUS));
    }
 
    public void playerHit()
@@ -51,9 +61,9 @@ public class BlackjackController
       model.dealerPlay();
    }
 
-   public ArrayList<int> getScores()
+   public ArrayList<Integer> getScores()
    {
-      ArrayList<int> scores = new ArrayList<int>();
+      ArrayList<Integer> scores = new ArrayList<>();
 
       scores.add(model.score(PlayerType.USER));
 
@@ -67,59 +77,71 @@ public class BlackjackController
       return scores;
    }
 
-   singleModeListener = new ActionListener() {
+   protected void initResponsiveness(BlackjackView view)
+   {
+      view.addSinglePlayerModeListener(singleModeListener);
+      view.addVersusModeListener(versusModeListener);
+      view.addHelpListener(helpButtonListener);
+      //view.addSplitListener(splitListener);
+      view.addStandListener(standListener);
+      view.addHitListener(hitListener);
+   }
+
+   protected ActionListener singleModeListener = new ActionListener() {
       
        @Override
        public void actionPerformed(ActionEvent e)
        {
-    
+          playSinglePlayer();
+          view.displayGame();
        }
-   }
+   };
 
    
-   dualModeListener = new ActionListener() {
+   protected ActionListener versusModeListener = new ActionListener() {
       
        @Override
        public void actionPerformed(ActionEvent e)
        {
-    
+          playComp();
+          view.displayGame();
        }
-   }
+   };
 
-   helpButtonListener = new ActionListener() {
+   protected ActionListener helpButtonListener = new ActionListener() {
       
        @Override
        public void actionPerformed(ActionEvent e)
        {
-    
+          view.displayHelp();    
        }
-   }
+   };
 
-   hitListener = new ActionListener() {
+   protected ActionListener hitListener = new ActionListener() {
       
        @Override
        public void actionPerformed(ActionEvent e)
        {
     
        }
-   }
+   };
 
-   splitModeListener = new ActionListener() {
+   protected ActionListener splitListener = new ActionListener() {
       
        @Override
        public void actionPerformed(ActionEvent e)
        {
-    
+          
        }
-   }
+   };
 
-   standListener = new ActionListener() {
+   protected ActionListener standListener = new ActionListener() {
       
        @Override
        public void actionPerformed(ActionEvent e)
        {
     
        }
-   }
+   };
 }
 
