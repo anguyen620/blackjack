@@ -109,9 +109,19 @@ public class GameplayGUI extends JPanel
       this.add(playerPanel);
    }
    
-   public void addListener(JComponent component, ActionListener listener)
+   public void addHitListener(ActionListener listener)
    {   
-      component.addActionListener(listener);
+      hit.addActionListener(listener);
+   } 
+   
+   public void addStandListener(ActionListener listener)
+   {   
+      stand.addActionListener(listener);
+   } 
+   
+   public void addSplitListener(ActionListener listener)
+   {   
+      split.addActionListener(listener);
    } 
    
    // Test GameplayGUI
