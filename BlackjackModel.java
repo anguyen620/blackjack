@@ -27,6 +27,14 @@ public class BlackjackModel
 
    protected static final String FILENAME = "statistics.txt";
 
+   public BlackjackModel()
+   {
+      dealer = new Dealer();
+      player = new Player();
+      statistics = new Streak(FILENAME);
+      deck = new Deck(); 
+   }
+
    public BlackjackModel(Mode mode)
    {
       gameMode = mode;
@@ -52,10 +60,15 @@ public class BlackjackModel
       {
          case USER:
             player.hit(deck.popCard());
-	 case DEALER:
-	    dealer.hit(deck.popCard());
-	 case COMPUTER:
+            break;
+
+         case DEALER:
+            dealer.hit(deck.popCard());
+            break;
+
+         case COMPUTER:
             compPlayer.hit(deck.popCard());
+            break;
       }
    }
 
@@ -64,12 +77,35 @@ public class BlackjackModel
       switch (type)
       {
          case USER:
-	    player.stand();
-	 case DEALER:
-	    dealer.stand();
-	 case COMPUTER:
-	    compPlayer.stand();
+            player.stand();
+            break;
+
+         case DEALER:
+            dealer.stand();
+            break;
+
+         case COMPUTER:
+            compPlayer.stand();
+            break;
       }
+   }
+
+   public void split(PlayerType type)
+   {
+//      switch (type)
+//      {
+//         case USER:
+//            player.split();
+//            break;
+//
+//         case DEALER:
+//            dealer.split();
+//            break;
+//
+//         case COMPUTER:
+//            compPlayer.split();
+//            break;
+//      }
    }
 
    public void dealerPlay()
@@ -176,5 +212,19 @@ public class BlackjackModel
       }
 
       return winner;
+   }
+
+   public void setMode(Mode mode)
+   {
+      gameMode = mode;
+
+      if (mode == Mode.SINGLE_PLAYER)
+      {
+         compPlayer = null;
+      }
+      else
+      {
+         compPlayer = new Player();
+      }
    }
 }
