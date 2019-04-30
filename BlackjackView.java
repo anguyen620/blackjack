@@ -10,11 +10,16 @@ public class BlackjackView
    protected Opening opening;
    protected GameplayGUI gameGUI;
 
-   public BlackjackView()
+   BlackjackView()
    {
-      frame = new JFrame("Blackjack");
-      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      
+      initVariables();
+      initFrame();
+   }
+
+   private void initVariables()
+   {
+      frame = new JFrame("BlackJack");
+
       try
       {
          opening = new Opening();
@@ -23,7 +28,13 @@ public class BlackjackView
       {
          System.out.println("openingpic.png cannot be found");
       }
-      
+
+      gameGUI = new GameplayGUI();
+   }
+
+   private void initFrame()
+   {
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.add(opening);
       frame.pack();
       frame.setVisible(true);
@@ -41,17 +52,17 @@ public class BlackjackView
    
    public void displayGame()
    {
-      gameGUI = new GameplayGUI();
-      opening.setVisible(false);
-      frame.add(this.gameGUI);
-      frame.pack();
+      frame.remove(opening);
+      frame.add(gameGUI);
+      frame.repaint();
    }
    
    public void displayEndMessage(String winner, int dealerScore, int playerScore, int computerScore)
    {
       endMessage = new EndMessage(winner, dealerScore, playerScore, computerScore);
-      gameGUI.setVisible(false);
-      frame.add(this.endMessage);      
+      frame.remove(gameGUI);
+      frame.add(endMessage); 
+      frame.repaint();
    }
    
    public void addSinglePlayerModeListener(ActionListener listener)
