@@ -50,5 +50,10 @@ public class BlackjackView
       this.gameGUI.setVisible(false);
       frame.add(this.endMessage);      
    }
+   
+   public void addListener(JComponent component, ActionListener listener)
+   {   
+      component.addActionListener(listener);
+   } 
 }
 
