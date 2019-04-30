@@ -66,9 +66,26 @@ public class Opening extends JPanel
       return option2;
    }
    
-   public void addListener(JComponent component, ActionListener listener)
+   public void singlePlayerListener(ActionListener listener)
    {   
-      component.addActionListener(listener);
-   } 
+      option1.addActionListener(listener);
+   }
+
+   public void dualPlayerListener(ActionListener listener)
+   {   
+      option2.addActionListener(listener);
+   }
+
+   public void helpButtonListener(ActionListener listener)
+   {   
+      help.addActionListener(listener);
+   }
+
+   public void displayHelp()
+   {
+      JFrame hintFrame = new JFrame("Hints");
+      hintFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      JOptionPane.showMessageDialog(hintFrame, "Hints"); 
+   }
 }
 
