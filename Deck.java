@@ -21,11 +21,11 @@ public class Deck
    {
       ArrayList<Card> deck = new ArrayList<>();
    
-      for (int i = 0; i < 13; i++)
+      for (int i = 1; i < 13; i++)
       {
           String temp = "";
 
-          if (i == 0)
+          if (i == 1)
           {
              temp = "ace";
           }
@@ -45,11 +45,21 @@ public class Deck
           {
              temp = Integer.toString(i);
           }
-              
-          deck.add(new Card(Suit.SPADES, i, new CardImage("./images/"+temp+"_of_spades.png")));
-          deck.add(new Card(Suit.HEARTS, i, new CardImage("./images/"+temp+"_of_hearts.png")));
-          deck.add(new Card(Suit.DIAMONDS, i, new CardImage("./images/"+temp+"_of_diamonds.png")));
-          deck.add(new Card(Suit.CLUBS, i, new CardImage("./images/"+temp+"_of_clubs.png")));
+
+          int val = -1;
+          if (i > 10)
+          {
+             val = 10;
+          }
+          else
+          {
+             val = i;
+          }
+
+          deck.add(new Card(Suit.SPADES, val, new CardImage("./images/"+temp+"_of_spades.png")));
+          deck.add(new Card(Suit.HEARTS, val, new CardImage("./images/"+temp+"_of_hearts.png")));
+          deck.add(new Card(Suit.DIAMONDS, val, new CardImage("./images/"+temp+"_of_diamonds.png")));
+          deck.add(new Card(Suit.CLUBS, val, new CardImage("./images/"+temp+"_of_clubs.png")));
       }
 
       return deck;
