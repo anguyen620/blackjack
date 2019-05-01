@@ -122,7 +122,7 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
-    
+          model.hit(PlayerType.USER)
        }
    };
 
@@ -140,7 +140,7 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
-    
+          model.stand(PlayerType.USER)
        }
    };
 }
