@@ -54,6 +54,21 @@ public class BlackjackModel
       }
    }
 
+   public String[] getImages(PlayerType type)
+   {
+      switch (type)
+      {
+         case USER:
+            return player.getImages();
+         
+         case DEALER:
+            return dealer.getImages();
+
+         case COMPUTER:
+            return compPlayer.getImages();
+      }
+   }
+
    public void hit(PlayerType type)
    {
       switch (type)
