@@ -31,7 +31,35 @@ public class GameplayGUI extends JPanel
    protected JPanel middlePanel;
    
    // these member fields will be provided by the model after implementing the model
-   protected JLabel[] pictures;
+   protected ArrayList<JLabel> playerPictures;
+   protected ArrayList<JLabel> dealerPictures;
+   protected ArrayList<JLabel> compPictures;
+
+   public void setPictures(PlayerType type, String[] images)
+   {
+      ArrayList<JLabel> temp = new ArrayList<JLabel>();
+
+      for (String s: images)
+      {
+         BufferedImage pic = ImageIO.read(new File(s));
+         temp.add(new JLabel(new ImageIcon(pic)));
+      }
+
+      switch (type)
+      {
+         case PlayerType.USER:
+            playerPictures = temp;
+            break;
+
+         case PlayerType.DEALER:
+            dealerPictures = temp;
+            break;
+
+         case PlayerType.COMPUTER:
+            compPictures = temp;
+            break;
+      }
+   }
 
    public GameplayGUI()
    {
