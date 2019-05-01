@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
 public class Deck
 {
 //   protected static final int MAX_DECK_SIZE = 52;
@@ -45,7 +49,7 @@ public class Deck
           deck.add(new Card(Suit.SPADES, i, new CardImage("./images/"+temp+"_of_spades.png")));
           deck.add(new Card(Suit.HEARTS, i, new CardImage("./images/"+temp+"_of_hearts.png")));
           deck.add(new Card(Suit.DIAMONDS, i, new CardImage("./images/"+temp+"_of_diamonds.png")));
-          deck.add(new Card(Suit.CLUBS, i, new CardImage("./images/"+temp+"_of_clubs")));
+          deck.add(new Card(Suit.CLUBS, i, new CardImage("./images/"+temp+"_of_clubs.png")));
       }
 
       return deck;
@@ -80,5 +84,21 @@ public class Deck
    public void removeCard(Card card)
    {
       cards.remove(card);
+   }
+
+   public static void main(String[] args)
+   {
+      Deck deck = new Deck();
+      Card card = deck.popCard();
+      JLabel cardImage = card.getImage();
+
+      JFrame frame = new JFrame("Card View");
+      JPanel panel = new JPanel();
+      panel.add(cardImage);
+      frame.add(panel);
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.pack();
+      frame.setVisible(true);
+     
    }
 }
