@@ -38,6 +38,7 @@ public class Streak implements Serializable
       catch (IOException io)
       {
          System.out.println("Cannot save streak data");
+         System.exit(1);
       }
    }
 
