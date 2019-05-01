@@ -77,6 +77,11 @@ public class BlackjackController
       return scores;
    }
 
+   public void updateImages(PlayerType type)
+   {
+      view.updateGameplayImages(type, model.getImages(type))
+   }
+
    protected void initResponsiveness(BlackjackView view)
    {
       view.addSinglePlayerModeListener(singleModeListener);
