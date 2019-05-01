@@ -16,6 +16,11 @@ public class BlackjackView
       initFrame();
    }
 
+   public void updateGameplayImages(PlayerType type, String[] images)
+   {
+      gameGUI.setPictures(type, images)
+   }
+
    private void initVariables()
    {
       frame = new JFrame("BlackJack");
