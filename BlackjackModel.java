@@ -25,7 +25,7 @@ public class BlackjackModel
    protected Turn turn;
    protected Deck deck;   
 
-   protected static final String FILENAME = "statistics.txt";
+   protected static final String FILENAME = "streak.txt";
 
    public BlackjackModel()
    {
@@ -51,21 +51,6 @@ public class BlackjackModel
 
          case VERSUS:
             compPlayer = new Player();
-      }
-   }
-
-   public String[] getImages(PlayerType type)
-   {
-      switch (type)
-      {
-         case USER:
-            return player.getImages();
-         
-         case DEALER:
-            return dealer.getImages();
-
-         case COMPUTER:
-            return compPlayer.getImages();
       }
    }
 
