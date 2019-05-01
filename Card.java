@@ -41,6 +41,11 @@ public class Card
    {
       return cardImage.getCardImage();
    }
+
+   public String getImagePath()
+   {
+      return cardImage.getImagePath();
+   }
    
    @Override
    public boolean equals(Object o)

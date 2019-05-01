@@ -39,4 +39,9 @@ public class CardImage
    {
       return image;
    }
+
+   public String getImagePath()
+   {
+      return imagepath;
+   }
 }

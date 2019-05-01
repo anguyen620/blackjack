@@ -42,6 +42,22 @@ public abstract class AbstractPlayer
       }
    }
    
+   public String[] getImages()
+   {
+      cards = hand.getHand();
+
+      String[] temp = new String[cards.size()]
+
+      int i = 0;
+      for (Card c: cards)
+      {
+         temp[i] = c.getImagePath();
+         i++;
+      }
+
+      return temp;
+   }
+
    public abstract void hit(Card card);
    
    public void stand() {} // do nothing and end turn
