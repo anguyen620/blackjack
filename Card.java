@@ -1,4 +1,6 @@
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
 
 enum Suit
 {
@@ -57,9 +59,18 @@ public class Card
    public static void main(String[] args)
    {
       Suit suit = Suit.DIAMONDS;
-      String path = "../images/image1.jpeg";
+      String path = "./images/10_of_clubs.png";
       CardImage cardImage = new CardImage(path);
       Card card = new Card(suit, 9, cardImage);
+
+      JFrame frame = new JFrame();
+      JPanel panel = new JPanel();
+      panel.add(card.getImage());
+      frame.add(panel);
+      frame.pack();
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.setVisible(true);
+
       System.out.println("Card Suit: " + card.getSuit());
       System.out.println("Card Value: " + card.getValue());
    }
