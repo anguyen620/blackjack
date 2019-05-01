@@ -19,7 +19,7 @@ public class Deck
 
    private ArrayList<Card> initializeDeck()
    {
-      ArrayList<Card> deck = new ArrayList<>();
+      ArrayList<Card> deck = new ArrayList<Card>();
    
       for (int i = 1; i < 13; i++)
       {
