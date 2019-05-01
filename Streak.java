@@ -1,26 +1,32 @@
 import java.io.*;
 import java.io.Serializable;
 
-public class Streak implements Serializable
+import java.util.*;
+
+public class Streak
 {
    protected int streak;
    protected String fileName;
+   protected File file;
+   protected Scanner scanner;
 
    public Streak(String filename)
    {
       this.fileName = filename;
       try
       {
-         FileInputStream file = new FileInputStream(filename);
-         ObjectInputStream in = new ObjectInputStream(file);
-         this.streak = (Integer) in.readObject();
+	 this.file = new File(filename);
+	 this.scanner = new Scanner(file);
+	 String s = scanner.nextLine();
+         this.streak = Integer.parseInt(s);
          
-         in.close();
-         file.close();
+         this.scanner.close();
       }
       catch (Exception error)
       {
-         System.out.println("Cannot retrieve streak data");
+	 error.printStackTrace();
+	 System.out.println("Cannot retrieve streak data");
+	 System.exit(1);
       }
    }
 
@@ -28,12 +34,9 @@ public class Streak implements Serializable
    {
       try
       {
-         FileOutputStream file = new FileOutputStream(fileName);
-         ObjectOutputStream out = new ObjectOutputStream(file);
-         out.write(this.streak);
-         
+         FileWriter out = new FileWriter(file, true);
+	 out.write(this.streak);
          out.close();
-         file.close();
       }
       catch (IOException io)
       {
@@ -55,6 +58,19 @@ public class Streak implements Serializable
    public void increment()
    {
       this.streak++; 
+   }
+
+   public static void main(String[] args)
+   {
+      Streak streak = new Streak("streak.txt");
+      streak.increment();
+      streak.increment();
+      streak.increment();
+      System.out.println("getStreak(): " + streak.getStreak());
+
+      streak.saveToFile();
+      Scanner sc = new Scanner("streak.txt"); 
+      System.out.println("saveToFile(): " + sc.nextLine());
    }
 
 }
