@@ -18,7 +18,7 @@ public class BlackjackView
 
    public void updateGameplayImages(PlayerType type, String[] images)
    {
-      gameGUI.setPictures(type, images)
+      gameGUI.setPictures(type, images);
    }
 
    private void initVariables()
