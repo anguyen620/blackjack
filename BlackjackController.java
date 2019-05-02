@@ -132,6 +132,7 @@ public class BlackjackController
        public void actionPerformed(ActionEvent e)
        {
           model.hit(PlayerType.USER);
+          view.updateGameplayImages(PlayerType.USER, model.player.getHand());
           if (model.player.getScore() >= 21)
              model.dealerPlay();
              if (model.getMode() == Mode.VERSUS)
