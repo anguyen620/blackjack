@@ -9,6 +9,10 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
+enum GameType
+{
+   SOLO, COMPUTER;
+}
 public class GameplayGUI extends JPanel
 {
    // constants
@@ -57,19 +61,14 @@ public class GameplayGUI extends JPanel
       }
    }
 
-   public GameplayGUI(String type)
+   public GameplayGUI(GameType type)
    {
-      switch(type)
-      {
-         case "Solo":
-         case "Computer":
-      }
       // initialize protected fields
       initVariables();
       initButtons(hit);
       initButtons(split);
       initButtons(stand);
-      initLayout();
+      initLayout(type);
    }
 
    private void initImages()
@@ -96,7 +95,7 @@ public class GameplayGUI extends JPanel
       button.setOpaque(true);
    }
 
-   private void initLayout()
+   private void initLayout(GameType type)
    {
       dealerPanel.add(pictures[0]);
       dealerPanel.add(pictures[1]);
