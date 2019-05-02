@@ -98,7 +98,7 @@ public class BlackjackController
        public void actionPerformed(ActionEvent e)
        {
           playSinglePlayer();
-          view.displayGame("Solo");
+          view.displayGame(GameType.SOLO);
        }
    };
 
@@ -109,7 +109,7 @@ public class BlackjackController
        public void actionPerformed(ActionEvent e)
        {
           playComp();
-          view.displayGame("Computer");
+          view.displayGame(GameType.COMPUTER);
        }
    };
 
