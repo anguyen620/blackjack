@@ -12,10 +12,10 @@ public class BlackjackController
    BlackjackView view;
    BlackjackModel model;
 
-   public BlackjackController(BlackjackView view)
+   public BlackjackController(BlackjackView view, BlackjackModel model)
    {
       this.view = view;
-
+      this.model = model;
       initResponsiveness(this.view);
    }
 
@@ -92,8 +92,8 @@ public class BlackjackController
       view.addHitListener(hitListener);
    }
 
-   protected ActionListener singleModeListener = new ActionListener() {
-      
+   protected ActionListener singleModeListener = new ActionListener() 
+   {
        @Override
        public void actionPerformed(ActionEvent e)
        {
@@ -103,8 +103,8 @@ public class BlackjackController
    };
 
    
-   protected ActionListener versusModeListener = new ActionListener() {
-      
+   protected ActionListener versusModeListener = new ActionListener() 
+   {   
        @Override
        public void actionPerformed(ActionEvent e)
        {
@@ -113,8 +113,8 @@ public class BlackjackController
        }
    };
 
-   protected ActionListener helpButtonListener = new ActionListener() {
-      
+   protected ActionListener helpButtonListener = new ActionListener() 
+   {     
        @Override
        public void actionPerformed(ActionEvent e)
        {
@@ -122,8 +122,8 @@ public class BlackjackController
        }
    };
 
-   protected ActionListener hitListener = new ActionListener() {
-      
+   protected ActionListener hitListener = new ActionListener() 
+   {    
        @Override
        public void actionPerformed(ActionEvent e)
        {
@@ -131,8 +131,8 @@ public class BlackjackController
        }
    };
 
-   protected ActionListener splitListener = new ActionListener() {
-      
+   protected ActionListener splitListener = new ActionListener() 
+   {      
        @Override
        public void actionPerformed(ActionEvent e)
        {
@@ -140,8 +140,8 @@ public class BlackjackController
        }
    };
 
-   protected ActionListener standListener = new ActionListener() {
-      
+   protected ActionListener standListener = new ActionListener()
+   {      
        @Override
        public void actionPerformed(ActionEvent e)
        {
