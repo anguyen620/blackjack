@@ -1,10 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import javax.imageio.ImageIO;
-
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
+import java.awt.*;
+import java.util.ArrayList;
 import java.awt.image.BufferedImage;
 import java.awt.event.ActionListener;
 
@@ -29,8 +27,6 @@ public class GameplayGUI extends JPanel
    protected JPanel dealerPanel;
    protected JPanel playerPanel;
    protected JPanel middlePanel;
-   
-   // these member fields will be provided by the model after implementing the model
    protected ArrayList<JLabel> playerPictures;
    protected ArrayList<JLabel> dealerPictures;
    protected ArrayList<JLabel> compPictures;
