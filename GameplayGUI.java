@@ -35,17 +35,14 @@ public class GameplayGUI extends JPanel
    protected ArrayList<JLabel> dealerPictures;
    protected ArrayList<JLabel> compPictures;
 
-   //Function repetitive: get the player's hand, which has cards in which you can call card.getImage()
-   public void setPictures(PlayerType type, String[] images)
+   public void setPictures(PlayerType type, Hand hand)
    {
       ArrayList<JLabel> temp = new ArrayList<JLabel>();
-
-      for (String s: images)
+      ArrayList<Card> cards = hand.getHand();
+      for (Card card: cards)
       {
-         BufferedImage pic = ImageIO.read(new File(s));
-         temp.add(new JLabel(new ImageIcon(pic)));
+         temp.add(card.getImage());
       }
-
       switch (type)
       {
          case PlayerType.USER:
@@ -103,9 +100,8 @@ public class GameplayGUI extends JPanel
          case SOLO:
             BufferedImage pic = ImageIO.read("./images/image1.jpeg");
             JLabel coveredCard = new JLabel(new ImageIcon(pic));
-            dealerPanel.add(coveredCard);
-          
-            dealerPanel.add(pictures[1]);
+            dealerPanel.add(coveredCard);            
+            dealerPanel.add(dealerPictures.get(0));
             dealerPanel.add(dealerName);
             dealerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 
@@ -113,8 +109,8 @@ public class GameplayGUI extends JPanel
             middlePanel.add(split);
             middlePanel.add(stand);
 
-            playerPanel.add(pictures[2]);
-            playerPanel.add(pictures[3]);
+            playerPanel.add(playerPictures.get(0));
+            playerPanel.add(playerPictures.get(1));
             playerPanel.add(playerName);
             playerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
       
@@ -124,6 +120,7 @@ public class GameplayGUI extends JPanel
             this.add(dealerPanel);
             this.add(middlePanel);
             this.add(playerPanel);
+         }  
    }
    
    public void addHitListener(ActionListener listener)
