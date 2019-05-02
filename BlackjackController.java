@@ -102,7 +102,7 @@ public class BlackjackController
        public void actionPerformed(ActionEvent e)
        {
           playSinglePlayer();
-          view.displayGame(GameType.SOLO);
+          view.displayGame(GameType.SOLO, model);
        }
    };
 
