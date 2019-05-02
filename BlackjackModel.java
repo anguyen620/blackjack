@@ -220,6 +220,10 @@ public class BlackjackModel
       return winner;
    }
 
+   public Mode getMode()
+   {
+      return gameMode;
+   }
    public void setMode(Mode mode)
    {
       gameMode = mode;
