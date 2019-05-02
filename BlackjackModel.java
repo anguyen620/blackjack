@@ -227,4 +227,8 @@ public class BlackjackModel
          compPlayer = new Player();
       }
    }
+   public ArrayList<String> getImages(PlayerType playerType)
+   {
+      ArrayList<String> imagesNames = new ArrayList<String>();
+   }
 }
