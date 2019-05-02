@@ -113,7 +113,7 @@ public class BlackjackController
        public void actionPerformed(ActionEvent e)
        {
           playComp();
-          view.displayGame(GameType.COMPUTER);
+          view.displayGame(GameType.COMPUTER, model);
        }
    };
 
