@@ -16,7 +16,7 @@ public class BlackjackController
    {
       this.view = view;
       this.model = model;
-      initResponsiveness();
+      initMenuListeners();
    }
 
    public void addView(BlackjackView view)
@@ -82,11 +82,15 @@ public class BlackjackController
       view.updateGameplayImages(type, model.getImages(type));
    }
 
-   protected void initResponsiveness()
+   protected void initMenuListeners()
    {
       view.addSinglePlayerModeListener(singleModeListener);
       view.addVersusModeListener(versusModeListener);
       view.addHelpListener(helpButtonListener);
+   }
+
+   protected void initGameListeners()
+   {
       //view.addSplitListener(splitListener);
       view.addStandListener(standListener);
       view.addHitListener(hitListener);
