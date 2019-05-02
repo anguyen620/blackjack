@@ -54,7 +54,7 @@ public class BlackjackView
       opening.setVisible(true);
    }
    
-   public void displayGame(String type)
+   public void displayGame(GameType type)
    {
       frame.remove(opening);
       gameGUI = new GameplayGUI(type);
