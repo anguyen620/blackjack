@@ -233,16 +233,16 @@ public class BlackjackModel
          compPlayer = new Player();
       }
    }
-   public String[] getImages(PlayerType playerType)
+   public ArrayList<Card> getImages(PlayerType playerType)
    {
       switch (playerType)
       {
          case USER:
-            return player.getImages();
+            return player.getHand();
          case DEALER:
-            return dealer.getImages();
+            return dealer.getHand();
          case COMPUTER:
-            return compPlayer.getImages();
+            return compPlayer.getHand();
       }
    }
 }
