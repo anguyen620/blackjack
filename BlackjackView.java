@@ -57,7 +57,8 @@ public class BlackjackView
    public void displayGame(GameType type)
    {
       frame.remove(opening);
-      gameGUI = new GameplayGUI(type);
+      gameGUI = new GameplayGUI();
+      gameGUI.initLayout(type);
       frame.add(gameGUI);
       frame.repaint();
    }
