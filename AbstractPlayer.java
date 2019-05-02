@@ -44,9 +44,9 @@ public abstract class AbstractPlayer
    
    public String[] getImages()
    {
-      cards = hand.getHand();
+      ArrayList<Card> cards = hand.getHand();
 
-      String[] temp = new String[cards.size()]
+      String[] temp = new String[cards.size()];
 
       int i = 0;
       for (Card c: cards)
