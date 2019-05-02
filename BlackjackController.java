@@ -1,12 +1,12 @@
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import java.util.ArrayList;
 
 /*
  * BlackjackController
  * Controller contains attributes for both View and Model
  */
+
 public class BlackjackController
 {
    BlackjackView view;
@@ -79,7 +79,7 @@ public class BlackjackController
 
    public void updateImages(PlayerType type)
    {
-      view.updateGameplayImages(type, model.getImages(type))
+      view.updateGameplayImages(type, model.getImages(type));
    }
 
    protected void initResponsiveness(BlackjackView view)
@@ -98,7 +98,7 @@ public class BlackjackController
        public void actionPerformed(ActionEvent e)
        {
           playSinglePlayer();
-          view.displayGame();
+          view.displayGame("Solo");
        }
    };
 
@@ -109,7 +109,7 @@ public class BlackjackController
        public void actionPerformed(ActionEvent e)
        {
           playComp();
-          view.displayGame();
+          view.displayGame("Computer");
        }
    };
 
@@ -127,7 +127,7 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
-          model.hit(PlayerType.USER)
+          model.hit(PlayerType.USER);
        }
    };
 
@@ -145,7 +145,7 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
-          model.stand(PlayerType.USER)
+          model.stand(PlayerType.USER);
        }
    };
 }
