@@ -54,14 +54,14 @@ public class BlackjackView
       opening.setVisible(true);
    }
    
-   public void displayGame(GameType type, BlackjackModel)
+   public void displayGame(GameType type, BlackjackModel model)
    {
       frame.remove(opening);
       gameGUI = new GameplayGUI();
       gameGUI.setPictures(PlayerType.USER, model.player.getHand());
       gameGUI.setPictures(PlayerType.DEALER, model.dealer.getHand());
-      if (type = GameType.COMPUTER)
-         gameGUI.setPictures(PlayerType.COMPUTER, model.compPlayer.getHand())
+      if (type == GameType.COMPUTER)
+         gameGUI.setPictures(PlayerType.COMPUTER, model.compPlayer.getHand());
       gameGUI.initLayout(type);
       frame.add(gameGUI);
       frame.repaint();
