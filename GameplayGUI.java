@@ -96,12 +96,16 @@ public class GameplayGUI extends JPanel
    {
       try
       {
+      dealerPanel.setLayout(new BoxLayout(dealerPanel, BoxLayout.Y_AXIS));
+      dealerPanel.add(dealerName);
+      JPanel tempPanel = new JPanel();
+      tempPanel.setLayout(new BoxLayout(tempPanel, BoxLayout.X_AXIS));
       BufferedImage pic = ImageIO.read(new File("./images/image1.jpeg"));
       JLabel coveredCard = new JLabel(new ImageIcon(pic));
-      dealerPanel.add(coveredCard);
-      dealerPanel.add(dealerPictures.get(0));
-      dealerPanel.add(dealerName);
-      dealerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+      tempPanel.add(coveredCard);
+      tempPanel.add(dealerPictures.get(0));
+      tempPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+      dealerPanel.add(tempPanel);
       }
       catch (IOException io)
       {
