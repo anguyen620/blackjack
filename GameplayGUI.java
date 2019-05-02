@@ -35,6 +35,7 @@ public class GameplayGUI extends JPanel
    protected ArrayList<JLabel> dealerPictures;
    protected ArrayList<JLabel> compPictures;
 
+   //Function repetitive: get the player's hand, which has cards in which you can call card.getImage()
    public void setPictures(PlayerType type, String[] images)
    {
       ArrayList<JLabel> temp = new ArrayList<JLabel>();
@@ -97,27 +98,32 @@ public class GameplayGUI extends JPanel
 
    private void initLayout(GameType type)
    {
-      dealerPanel.add(pictures[0]);
-      dealerPanel.add(pictures[1]);
-      dealerPanel.add(dealerName);
-      dealerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+      switch (type)
+      {
+         case SOLO:
+            BufferedImage pic = ImageIO.read("./images/image1.jpeg");
+            JLabel coveredCard = new JLabel(new ImageIcon(pic));
+            dealerPanel.add(coveredCard);
+          
+            dealerPanel.add(pictures[1]);
+            dealerPanel.add(dealerName);
+            dealerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 
-      middlePanel.add(hit);
-      middlePanel.add(split);
-      middlePanel.add(stand);
+            middlePanel.add(hit);
+            middlePanel.add(split);
+            middlePanel.add(stand);
 
-      playerPanel.add(pictures[2]);
-      playerPanel.add(pictures[3]);
-      playerPanel.add(playerName);
-      playerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+            playerPanel.add(pictures[2]);
+            playerPanel.add(pictures[3]);
+            playerPanel.add(playerName);
+            playerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
       
-      // this.setPreferredSize(new Dimension(850, 750));
-      this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-      this.setBackground(PANEL_COLOR);
-      this.setOpaque(true);
-      this.add(dealerPanel);
-      this.add(middlePanel);
-      this.add(playerPanel);
+            this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+            this.setBackground(PANEL_COLOR);
+            this.setOpaque(true);
+            this.add(dealerPanel);
+            this.add(middlePanel);
+            this.add(playerPanel);
    }
    
    public void addHitListener(ActionListener listener)
