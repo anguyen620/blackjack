@@ -49,6 +49,10 @@ public class GameplayGUI extends JPanel
       {
          case USER:
             playerPictures = temp;
+            for (int i = 0; i < playerPictures.size(); i++)
+            {
+               playerPanel.add(playerPictures.get(i));
+            }
             break;
 
          case DEALER:
@@ -115,8 +119,6 @@ public class GameplayGUI extends JPanel
       middlePanel.add(split);
       middlePanel.add(stand);
       bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.X_AXIS));
-      playerPanel.add(playerPictures.get(0));
-      playerPanel.add(playerPictures.get(1));
       playerPanel.add(playerName);
       playerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
       bottomPanel.add(playerPanel);
