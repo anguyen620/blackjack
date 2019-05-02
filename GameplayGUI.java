@@ -25,11 +25,14 @@ public class GameplayGUI extends JPanel
    // members
    protected JLabel dealerName;
    protected JLabel playerName;
+   protected JLabel compName;
    protected JButton hit;
    protected JButton split;
    protected JButton stand;
    protected JPanel dealerPanel;
+   protected JPanel bottomPanel;
    protected JPanel playerPanel;
+   protected JPanel compPanel;
    protected JPanel middlePanel;
    protected ArrayList<JLabel> playerPictures;
    protected ArrayList<JLabel> dealerPictures;
@@ -82,8 +85,11 @@ public class GameplayGUI extends JPanel
       dealerPanel = new JPanel();
       playerPanel = new JPanel();
       middlePanel = new JPanel();
+      bottomPanel = new JPanel();
+      compPanel = new JPanel();
       dealerName = new JLabel(DEALER_STRING);
       playerName = new JLabel(PLAYER_STRING);
+      compName = new JLabel("COMPUTER");
    }
 
    private void initButtons(JButton button)
@@ -95,32 +101,36 @@ public class GameplayGUI extends JPanel
 
    private void initLayout(GameType type)
    {
-      switch (type)
+      BufferedImage pic = ImageIO.read("./images/image1.jpeg");
+      JLabel coveredCard = new JLabel(new ImageIcon(pic));
+      dealerPanel.add(coveredCard);            
+      dealerPanel.add(dealerPictures.get(0));
+      dealerPanel.add(dealerName);
+      dealerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+
+      middlePanel.add(hit);
+      middlePanel.add(split);
+      middlePanel.add(stand);
+      bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.X_AXIS));
+      playerPanel.add(playerPictures.get(0));
+      playerPanel.add(playerPictures.get(1));
+      playerPanel.add(playerName);
+      playerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+      bottomPanel.add(playerPanel);
+      if (type == GameType.COMPUTER)
       {
-         case SOLO:
-            BufferedImage pic = ImageIO.read("./images/image1.jpeg");
-            JLabel coveredCard = new JLabel(new ImageIcon(pic));
-            dealerPanel.add(coveredCard);            
-            dealerPanel.add(dealerPictures.get(0));
-            dealerPanel.add(dealerName);
-            dealerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
-
-            middlePanel.add(hit);
-            middlePanel.add(split);
-            middlePanel.add(stand);
-
-            playerPanel.add(playerPictures.get(0));
-            playerPanel.add(playerPictures.get(1));
-            playerPanel.add(playerName);
-            playerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
-      
-            this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-            this.setBackground(PANEL_COLOR);
-            this.setOpaque(true);
-            this.add(dealerPanel);
-            this.add(middlePanel);
-            this.add(playerPanel);
-         }  
+         compPanel.add(compPictures.get(0));
+         compPanel.add(compPictures.get(1));
+         compPanel.add(compName);
+         compPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+         bottomPanel.add(compPanel);
+      }
+      this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+      this.setBackground(PANEL_COLOR);
+      this.setOpaque(true);
+      this.add(dealerPanel);
+      this.add(middlePanel);
+      this.add(bottomPanel);
    }
    
    public void addHitListener(ActionListener listener)
