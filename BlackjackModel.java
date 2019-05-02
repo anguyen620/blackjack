@@ -233,13 +233,10 @@ public class BlackjackModel
       {
          case USER:
             return player.getImages();
-            break;
          case DEALER:
             return dealer.getImages();
-            break;
          case COMPUTER:
-            return computer.getImages();
-            break;
+            return compPlayer.getImages();
       }
    }
 }
