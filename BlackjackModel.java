@@ -43,6 +43,11 @@ public class BlackjackModel
       statistics = new Streak(FILENAME);
       deck = new Deck();
 
+      dealer.addToHand(deck.popCard());
+      dealer.addToHand(deck.popCard());
+      player.addToHand(deck.popCard());
+      player.addToHand(deck.popCard());
+      
       switch (gameMode)
       {
          case SINGLE_PLAYER:
@@ -51,6 +56,7 @@ public class BlackjackModel
 
          case VERSUS:
             compPlayer = new Player();
+            compPlayer.addToHand(deck.popCard());
       }
    }
 
