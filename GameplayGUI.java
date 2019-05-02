@@ -95,13 +95,19 @@ public class GameplayGUI extends JPanel
 
    private void initLayout(GameType type)
    {
+      try
+      {
       BufferedImage pic = ImageIO.read(new File("./images/image1.jpeg"));
       JLabel coveredCard = new JLabel(new ImageIcon(pic));
-      dealerPanel.add(coveredCard);            
+      dealerPanel.add(coveredCard);
       dealerPanel.add(dealerPictures.get(0));
       dealerPanel.add(dealerName);
       dealerPanel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
-
+      }
+      catch (IOException io)
+      {
+         System.out.println("Cannot open covered card image");
+      }
       middlePanel.add(hit);
       middlePanel.add(split);
       middlePanel.add(stand);
