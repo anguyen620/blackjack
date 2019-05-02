@@ -132,6 +132,10 @@ public class BlackjackController
        public void actionPerformed(ActionEvent e)
        {
           model.hit(PlayerType.USER);
+          if (model.player.getScore() >= 21)
+             model.dealerPlay();
+             if (model.getMode() == Mode.VERSUS)
+                model.compPlay();
        }
    };
 
@@ -150,6 +154,9 @@ public class BlackjackController
        public void actionPerformed(ActionEvent e)
        {
           model.stand(PlayerType.USER);
+          model.dealerPlay();
+             if (model.getMode() == Mode.VERSUS)
+                model.compPlay();
        }
    };
 }
