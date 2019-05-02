@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.ArrayList;
 
 public class BlackjackView 
 {
@@ -16,7 +17,7 @@ public class BlackjackView
       initFrame();
    }
 
-   public void updateGameplayImages(PlayerType type, String[] images)
+   public void updateGameplayImages(PlayerType type, ArrayList<String> images)
    {
       gameGUI.setPictures(type, images);
    }
