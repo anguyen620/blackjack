@@ -17,7 +17,7 @@ public class BlackjackView
       initFrame();
    }
 
-   public void updateGameplayImages(PlayerType type, Hand hand)
+   public void updateGameplayImages(PlayerType type, ArrayList<Card> hand)
    {
       gameGUI.setPictures(type, hand);
    }
