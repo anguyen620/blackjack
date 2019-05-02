@@ -61,14 +61,13 @@ public class GameplayGUI extends JPanel
       }
    }
 
-   public GameplayGUI(GameType type)
+   public GameplayGUI()
    {
       // initialize protected fields
       initVariables();
       initButtons(hit);
       initButtons(split);
       initButtons(stand);
-      initLayout(type);
    }
 
    private void initVariables()
