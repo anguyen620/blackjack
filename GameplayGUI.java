@@ -47,15 +47,15 @@ public class GameplayGUI extends JPanel
       }
       switch (type)
       {
-         case PlayerType.USER:
+         case USER:
             playerPictures = temp;
             break;
 
-         case PlayerType.DEALER:
+         case DEALER:
             dealerPictures = temp;
             break;
 
-         case PlayerType.COMPUTER:
+         case COMPUTER:
             compPictures = temp;
             break;
       }
