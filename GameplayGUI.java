@@ -92,7 +92,7 @@ public class GameplayGUI extends JPanel
       button.setOpaque(true);
    }
 
-   private void initLayout(GameType type)
+   public void initLayout(GameType type)
    {
       try
       {
@@ -151,7 +151,7 @@ public class GameplayGUI extends JPanel
    public static void main(String[] args)
    {
       JFrame frame = new JFrame("Test Gameplay GUI");
-      GameplayGUI view = new GameplayGUI(GameType.SOLO);
+      GameplayGUI view = new GameplayGUI();
 
       frame.add(view);
       frame.pack();
