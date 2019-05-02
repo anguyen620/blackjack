@@ -227,18 +227,19 @@ public class BlackjackModel
          compPlayer = new Player();
       }
    }
-   public ArrayList<CardImage> getImages(PlayerType playerType)
+   public String[] getImages(PlayerType playerType)
    {
-      ArrayList<CardImage> images = new ArrayList<CardImage>();
       switch (playerType)
       {
          case USER:
-         break;
+            return player.getImages();
+            break;
          case DEALER:
-         break;
+            return dealer.getImages();
+            break;
          case COMPUTER:
-         break;
+            return computer.getImages();
+            break;
       }
-      return images;
    }
 }
