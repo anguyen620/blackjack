@@ -2,8 +2,8 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 import javax.imageio.ImageIO;
-
-import java.awt.image.BufferedImage;
+import java.awt.Image;
+import java.awt.image.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +32,10 @@ public class CardImage
    {
       File file = new File(imagepath);
       BufferedImage pic = ImageIO.read(file);
-      image = new JLabel(new ImageIcon(pic));
+      ImageIcon imageIcon = new ImageIcon(pic);
+      Image im = imageIcon.getImage();
+      im = im.getScaledInstance(190, 266, java.awt.Image.SCALE_SMOOTH);
+      image = new JLabel(new ImageIcon(im));
    }
 
    public JLabel getCardImage()
