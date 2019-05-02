@@ -57,19 +57,13 @@ public class GameplayGUI extends JPanel
       }
    }
 
-   public GameplayGUI()
+   public GameplayGUI(String type)
    {
-      // this method will be replaced in actual implementation
-      try
+      switch(type)
       {
-         initImages();
+         case "Solo":
+         case "Computer":
       }
-      catch (IOException e)
-      {
-         System.out.println("Error in initializing images");
-         System.exit(1);
-      }
-
       // initialize protected fields
       initVariables();
       initButtons(hit);
@@ -78,15 +72,9 @@ public class GameplayGUI extends JPanel
       initLayout();
    }
 
-   private void initImages() throws IOException // this method will be replaced in actual implementation
+   private void initImages()
    {
-      pictures = new JLabel[4];
-
-      for (int i = 1; i <= 4; i++)
-      {
-         BufferedImage picture = ImageIO.read(new File("./images/image" + Integer.toString(i) + ".jpeg"));
-         pictures[i - 1] = new JLabel(new ImageIcon(picture));
-      }
+      
    }
 
    private void initVariables()
