@@ -34,8 +34,6 @@ public class BlackjackView
       {
          System.out.println("openingpic.png cannot be found");
       }
-
-      gameGUI = new GameplayGUI();
    }
 
    private void initFrame()
@@ -56,9 +54,10 @@ public class BlackjackView
       opening.setVisible(true);
    }
    
-   public void displayGame()
+   public void displayGame(String type)
    {
       frame.remove(opening);
+      gameGUI = new GameplayGUI(type);
       frame.add(gameGUI);
       frame.repaint();
    }
