@@ -38,11 +38,10 @@ public class GameplayGUI extends JPanel
    protected ArrayList<JLabel> dealerPictures;
    protected ArrayList<JLabel> compPictures;
 
-   public void setPictures(PlayerType type, Hand hand)
+   public void setPictures(PlayerType type, ArrayList<Card> hand)
    {
       ArrayList<JLabel> temp = new ArrayList<JLabel>();
-      ArrayList<Card> cards = hand.getHand();
-      for (Card card: cards)
+      for (Card card: hand)
       {
          temp.add(card.getImage());
       }
