@@ -71,11 +71,6 @@ public class GameplayGUI extends JPanel
       initLayout(type);
    }
 
-   private void initImages()
-   {
-      
-   }
-
    private void initVariables()
    {
       hit = new JButton("HIT");
@@ -100,7 +95,7 @@ public class GameplayGUI extends JPanel
 
    private void initLayout(GameType type)
    {
-      BufferedImage pic = ImageIO.read("./images/image1.jpeg");
+      BufferedImage pic = ImageIO.read(new File("./images/image1.jpeg"));
       JLabel coveredCard = new JLabel(new ImageIcon(pic));
       dealerPanel.add(coveredCard);            
       dealerPanel.add(dealerPictures.get(0));
@@ -151,7 +146,7 @@ public class GameplayGUI extends JPanel
    public static void main(String[] args)
    {
       JFrame frame = new JFrame("Test Gameplay GUI");
-      GameplayGUI view = new GameplayGUI();
+      GameplayGUI view = new GameplayGUI(GameType.SOLO);
 
       frame.add(view);
       frame.pack();
