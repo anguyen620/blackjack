@@ -32,4 +32,8 @@ public class EndMessage extends JPanel
       }
       add(this.menu);
    }
+   public void addMenuListener(ActionListener listener)
+   {
+      menu.addActionListener(listener) ;
+   }
 }
