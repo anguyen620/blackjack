@@ -202,14 +202,15 @@ public class BlackjackModel
 
       if (compPlayer != null)
       {
-         if(compPlayer.getScore() > dealer.getScore() && compPlayer.getScore() > player.getScore())
+         if(compPlayer.getScore() > dealer.getScore() && compPlayer.getScore() > player.getScore() &&
+            compPlayer.getScore() < 22)
          {
             winner = "Computer";
             return winner;
          }
       }
 
-      if (player.getScore() >= dealer.getScore())
+      if (player.getScore() >= dealer.getScore() && player.getScore() < 22)
       {
          winner = "You";
       }
