@@ -133,11 +133,8 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
-          System.out.println("begin");
           model.hit(PlayerType.USER);
-          System.out.println("model: check");
           view.updateGameplayImages(PlayerType.USER, model.player.getHand());
-          System.out.println("update: check");
           if (model.player.getScore() >= 21)
              model.dealerPlay();
              if (model.getMode() == Mode.VERSUS)
