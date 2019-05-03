@@ -136,9 +136,12 @@ public class BlackjackController
           model.hit(PlayerType.USER);
           view.updateGameplayImages(PlayerType.USER, model.player.getHand());
           if (model.player.getScore() >= 21)
+          {
+             view.disableButtons();
              model.dealerPlay();
              if (model.getMode() == Mode.VERSUS)
                 model.compPlay();
+          }
        }
    };
 
