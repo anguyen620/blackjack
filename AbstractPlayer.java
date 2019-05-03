@@ -18,6 +18,7 @@ public abstract class AbstractPlayer
 
    public int getScore()
    {
+      updateScore();
       return score;
    }
    
@@ -38,7 +39,14 @@ public abstract class AbstractPlayer
       
       for (Card card: cards)
       {
-         score += card.getValue();
+         if (card.getValue() == 1 && score + 11 <= 21)
+         {
+            score += 11;
+         }
+         else
+         {
+            score += card.getValue();
+         }
       }
    }
    
