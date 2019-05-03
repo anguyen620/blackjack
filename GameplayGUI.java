@@ -55,12 +55,12 @@ public class GameplayGUI extends JPanel
                playerPanel.add(playerPictures.get(i));
             }
             playerPanel.add(playerName);
-            playerPanel.revalidate();
             playerPanel.repaint();
-            bottomPanel.revalidate();
+            playerPanel.revalidate();
             bottomPanel.repaint();
-            this.revalidate();
+            bottomPanel.revalidate();
             this.repaint();
+            this.revalidate();
             break;
 
          case DEALER:
