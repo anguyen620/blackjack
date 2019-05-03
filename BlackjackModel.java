@@ -214,13 +214,11 @@ public class BlackjackModel
       {
          if (player.getScore() > dealer.getScore() && player.getScore() < 22)
             winner = "You";
-            statistics.increment();
       }
       else
       {
          if (player.getScore() < 22)
             winner = "You";
-            statistics.increment();
       }
 
       if (compPlayer != null)
@@ -245,6 +243,8 @@ public class BlackjackModel
       {
          statistics.resetStreak();
       }
+      else
+         statistics.increment();
       return winner;
    }
 
