@@ -12,7 +12,7 @@ public class EndMessage extends JPanel
 
    EndMessage(String winner, int dealer, int player, int comp)
    {
-      this.announcement = new JLabel(winner + " wins!");
+      this.announcement = new JLabel(winner + " win(s)!");
       this.announcement.setAlignmentX(Component.CENTER_ALIGNMENT);
       setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
       this.menu = new JButton("Back to main menu");
