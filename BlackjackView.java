@@ -115,6 +115,11 @@ public class BlackjackView
       gameGUI.addStandListener(listener) ;
    }
 
+   public void addMenuListener(ActionListener listener)
+   {
+      endMessage.addMenuListener(listener) ;
+   }
+
    public void displayHelp()
    {
       opening.displayHelp();
