@@ -41,6 +41,7 @@ public class BlackjackController
       }
       view.displayEndMessage(model.getWinner(), model.dealer.getScore(),
          model.player.getScore(), compScore);
+      view.addMenuListener(menuListener);
    }
 
    public void playSinglePlayer()
@@ -174,5 +175,15 @@ public class BlackjackController
           switchTurns();
        }
    };
+
+   protected ActionListener menuListener = new ActionListener()
+   {
+       @Override
+       public void actionPerformed(ActionEvent e)
+       {
+          view.displayMenu();
+       }
+   };
+
 }
 
