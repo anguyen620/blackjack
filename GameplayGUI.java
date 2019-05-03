@@ -27,7 +27,6 @@ public class GameplayGUI extends JPanel
    protected JLabel playerName;
    protected JLabel compName;
    public JButton hit;
-   public JButton split;
    public JButton stand;
    protected JPanel dealerPanel;
    protected JPanel bottomPanel;
@@ -78,14 +77,12 @@ public class GameplayGUI extends JPanel
       // initialize protected fields
       initVariables();
       initButtons(hit);
-      initButtons(split);
       initButtons(stand);
    }
 
    private void initVariables()
    {
       hit = new JButton("HIT");
-      split = new JButton("SPLIT");
       stand = new JButton("STAND");
       dealerPanel = new JPanel();
       playerPanel = new JPanel();
@@ -124,7 +121,6 @@ public class GameplayGUI extends JPanel
          System.out.println("Cannot open covered card image");
       }
       middlePanel.add(hit);
-      middlePanel.add(split);
       middlePanel.add(stand);
       bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.X_AXIS));
       playerPanel.add(playerName);
@@ -156,16 +152,10 @@ public class GameplayGUI extends JPanel
       stand.addActionListener(listener);
    } 
    
-   public void addSplitListener(ActionListener listener)
-   {   
-      split.addActionListener(listener);
-   } 
-
    public void disableButtons()
    {
       hit.setVisible(false);
       stand.setVisible(false);
-      split.setVisible(false);
    }   
    // Test GameplayGUI
    public static void main(String[] args)
