@@ -133,6 +133,7 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
+          int compScore = 0;
           model.hit(PlayerType.USER);
           view.updateGameplayImages(PlayerType.USER, model.player.getHand());
           if (model.player.getScore() > 21)
@@ -140,7 +141,12 @@ public class BlackjackController
              view.disableButtons();
              model.dealerPlay();
              if (model.getMode() == Mode.VERSUS)
-                model.compPlay();
+                {
+                   model.compPlay();
+                   compScore = model.compPlayer.getScore();
+                }
+             view.displayEndMessage(model.getWinner(), model.dealer.getScore(),
+                model.player.getScore(), compScore);
           }
        }
    };
