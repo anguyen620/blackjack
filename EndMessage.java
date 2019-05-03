@@ -22,18 +22,21 @@ public class EndMessage extends JPanel
       this.dealerScore.setAlignmentX(Component.CENTER_ALIGNMENT);
       this.playerScore = new JLabel("Player's score: " + Integer.toString(player));
       this.playerScore.setAlignmentX(Component.CENTER_ALIGNMENT);
-      this.streakScore = new JLabel("Current Streak: " + Integer.toString(streak));
-      this.streakScore.setAlignmentX(Component.CENTER_ALIGNMENT);
 
       add(this.announcement); 
       add(this.playerScore);
       add(this.dealerScore);
-      add(this.streakScore);
+
       if (comp != 0)
       {
          this.computerScore = new JLabel("Computer's score: " + Integer.toString(comp));
+         this.computerScore.setAlignmentX(Component.CENTER_ALIGNMENT);
          add(this.computerScore);
       }
+      this.streakScore = new JLabel("Current Streak: " + Integer.toString(streak));
+      this.streakScore.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+      add(this.streakScore);
       add(this.menu);
    }
    public void addMenuListener(ActionListener listener)
