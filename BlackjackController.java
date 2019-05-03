@@ -12,19 +12,11 @@ public class BlackjackController
    BlackjackView view;
    BlackjackModel model;
 
-   public BlackjackController(BlackjackView view)
-   {
-      this.view = view;
-      initMenuListeners();
-      initGameListeners();
-   }
-
    public BlackjackController(BlackjackView view, BlackjackModel model)
    {
       this.view = view;
       this.model = model;
       initMenuListeners();
-      initGameListeners();
    }
 
    public void addView(BlackjackView view)
@@ -111,6 +103,7 @@ public class BlackjackController
        {
           playSinglePlayer();
           view.displayGame(GameType.SOLO, model);
+          initGameListeners();
        }
    };
 
@@ -122,6 +115,7 @@ public class BlackjackController
        {
           playComp();
           view.displayGame(GameType.COMPUTER, model);
+          initGameListeners();
        }
    };
 
@@ -139,18 +133,15 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
-//         model.hit(PlayerType.USER);
-//         view.updateGameplayImages(PlayerType.USER, model.player.getHand());
-//         
-//         if (model.player.getScore() >= 21)
-//         {
-//            model.dealerPlay();
-//         }
-//         
-//         if (model.getMode() == Mode.VERSUS)
-//            model.compPlay();
-
-          System.out.println("Hit!");
+          System.out.println("begin");
+          model.hit(PlayerType.USER);
+          System.out.println("model: check");
+          view.updateGameplayImages(PlayerType.USER, model.player.getHand());
+          System.out.println("update: check");
+          if (model.player.getScore() >= 21)
+             model.dealerPlay();
+             if (model.getMode() == Mode.VERSUS)
+                model.compPlay();
        }
    };
 
@@ -168,12 +159,10 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
-//          model.stand(PlayerType.USER);
-//          model.dealerPlay();
-//             if (model.getMode() == Mode.VERSUS)
-//                model.compPlay();
-//
-          System.out.println("Stand!");
+          model.stand(PlayerType.USER);
+          model.dealerPlay();
+             if (model.getMode() == Mode.VERSUS)
+                model.compPlay();
        }
    };
 }
