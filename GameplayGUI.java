@@ -26,9 +26,9 @@ public class GameplayGUI extends JPanel
    protected JLabel dealerName;
    protected JLabel playerName;
    protected JLabel compName;
-   protected JButton hit;
-   protected JButton split;
-   protected JButton stand;
+   public JButton hit;
+   public JButton split;
+   public JButton stand;
    protected JPanel dealerPanel;
    protected JPanel bottomPanel;
    protected JPanel playerPanel;
@@ -160,7 +160,13 @@ public class GameplayGUI extends JPanel
    {   
       split.addActionListener(listener);
    } 
-   
+
+   public void disableButtons()
+   {
+      hit.setVisible(false);
+      stand.setVisible(false);
+      split.setVisible(false);
+   }   
    // Test GameplayGUI
    public static void main(String[] args)
    {
