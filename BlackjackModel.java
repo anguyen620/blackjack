@@ -196,26 +196,26 @@ public class BlackjackModel
       this.dealer = dealer;
    }
 
-   public AbstractPlayer getWinner()
+   public String getWinner()
    {
-      AbstractPlayer winner;
+      String winner;
 
       if (compPlayer != null)
       {
          if(compPlayer.getScore() > dealer.getScore() && compPlayer.getScore() > player.getScore())
          {
-            winner = compPlayer;
+            winner = "Computer";
             return winner;
          }
       }
 
       if (player.getScore() >= dealer.getScore())
       {
-         winner = player;
+         winner = "You";
       }
       else
       {
-         winner = dealer;
+         winner = "Dealer";
       }
 
       return winner;
