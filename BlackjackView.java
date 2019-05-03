@@ -26,6 +26,10 @@ public class BlackjackView
       frame.repaint();
       frame.revalidate();
    }
+   public void disableButtons()
+   {
+      gameGUI.disableButtons();
+   }
 
    private void initVariables()
    {
