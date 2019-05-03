@@ -242,7 +242,14 @@ public class BlackjackModel
          winner = "You";
       if (winner == "Dealer" || player.getScore() > 21)
       {
-         statistics.resetStreak();
+         if (dealer.getScore() == player.getScore())
+         {
+            continue;
+         }
+         else
+         {
+            statistics.resetStreak();
+         }
       }
       return winner;
    }
@@ -251,6 +258,7 @@ public class BlackjackModel
    {
       return gameMode;
    }
+   
    public void setMode(Mode mode)
    {
       gameMode = mode;
