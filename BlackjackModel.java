@@ -240,6 +240,10 @@ public class BlackjackModel
       }
       if (winner == "")
          winner = "You";
+      if (winner == "Dealer" || player.getScore() > 21)
+      {
+         statistics.resetStreak();
+      }
       return winner;
    }
 
