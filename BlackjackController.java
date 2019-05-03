@@ -59,11 +59,6 @@ public class BlackjackController
       model.hit(PlayerType.USER);
    }
 
-   public void playerSplit()
-   {
-      model.split(PlayerType.USER);
-   }
-
    public void playerStand()
    {
       model.stand(PlayerType.USER);
@@ -154,15 +149,6 @@ public class BlackjackController
           {
              switchTurns();
           }
-       }
-   };
-
-   protected ActionListener splitListener = new ActionListener() 
-   {      
-       @Override
-       public void actionPerformed(ActionEvent e)
-       {
-          
        }
    };
 
