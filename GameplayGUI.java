@@ -49,10 +49,18 @@ public class GameplayGUI extends JPanel
       {
          case USER:
             playerPictures = temp;
+            playerPanel.removeAll();
             for (int i = 0; i < playerPictures.size(); i++)
             {
                playerPanel.add(playerPictures.get(i));
             }
+            playerPanel.add(playerName);
+            playerPanel.revalidate();
+            playerPanel.repaint();
+            bottomPanel.revalidate();
+            bottomPanel.repaint();
+            this.revalidate();
+            this.repaint();
             break;
 
          case DEALER:
