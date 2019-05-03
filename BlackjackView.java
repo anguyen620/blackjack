@@ -99,11 +99,6 @@ public class BlackjackView
       opening.helpButtonListener(listener);
    }
 
-   public void addSplitListener(ActionListener listener)
-   {
-      gameGUI.addSplitListener(listener) ;
-   }
-
    public void addHitListener(ActionListener listener)
    {
       gameGUI.addHitListener(listener) ;
