@@ -220,6 +220,7 @@ public class BlackjackModel
       {
          if (player.getScore() < 22)
             winner = "You";
+            statistics.increment();
       }
 
       if (compPlayer != null)
@@ -239,17 +240,10 @@ public class BlackjackModel
          }
       }
       if (winner == "")
-         winner = "You";
-      if (winner == "Dealer" || player.getScore() > 21)
+         winner = "Dealer";
+      if (winner == "Dealer" || winner == "Computer")
       {
-         if (dealer.getScore() == player.getScore())
-         {
-            
-         }
-         else
-         {
-            statistics.resetStreak();
-         }
+         statistics.resetStreak();
       }
       return winner;
    }
