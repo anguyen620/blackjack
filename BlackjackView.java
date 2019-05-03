@@ -19,10 +19,12 @@ public class BlackjackView
 
    public void updateGameplayImages(PlayerType type, ArrayList<Card> hand)
    {
+      frame.remove(gameGUI);
       gameGUI.setPictures(type, hand);
+      frame.add(gameGUI);
       frame.pack();
-      frame.revalidate();
       frame.repaint();
+      frame.revalidate();
    }
 
    private void initVariables()
