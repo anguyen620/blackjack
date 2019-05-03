@@ -12,6 +12,13 @@ public class BlackjackController
    BlackjackView view;
    BlackjackModel model;
 
+   public BlackjackController(BlackjackView view)
+   {
+      this.view = view;
+      initMenuListeners();
+      initGameListeners();
+   }
+
    public BlackjackController(BlackjackView view, BlackjackModel model)
    {
       this.view = view;
@@ -132,12 +139,18 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
-          model.hit(PlayerType.USER);
-          view.updateGameplayImages(PlayerType.USER, model.player.getHand());
-          if (model.player.getScore() >= 21)
-             model.dealerPlay();
-             if (model.getMode() == Mode.VERSUS)
-                model.compPlay();
+//         model.hit(PlayerType.USER);
+//         view.updateGameplayImages(PlayerType.USER, model.player.getHand());
+//         
+//         if (model.player.getScore() >= 21)
+//         {
+//            model.dealerPlay();
+//         }
+//         
+//         if (model.getMode() == Mode.VERSUS)
+//            model.compPlay();
+
+          System.out.println("Hit!");
        }
    };
 
@@ -155,10 +168,12 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
-          model.stand(PlayerType.USER);
-          model.dealerPlay();
-             if (model.getMode() == Mode.VERSUS)
-                model.compPlay();
+//          model.stand(PlayerType.USER);
+//          model.dealerPlay();
+//             if (model.getMode() == Mode.VERSUS)
+//                model.compPlay();
+//
+          System.out.println("Stand!");
        }
    };
 }
