@@ -45,8 +45,10 @@ public class BlackjackModel
 
       dealer.addToHand(deck.popCard());
       dealer.addToHand(deck.popCard());
+      dealer.updateScore();
       player.addToHand(deck.popCard());
       player.addToHand(deck.popCard());
+      player.updateScore();
       
       switch (gameMode)
       {
@@ -58,6 +60,7 @@ public class BlackjackModel
             compPlayer = new Player();
             compPlayer.addToHand(deck.popCard());
             compPlayer.addToHand(deck.popCard());
+            compPlayer.updateScore();
       }
    }
 
