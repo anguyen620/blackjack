@@ -58,6 +58,7 @@ public class Streak
    public void increment()
    {
       this.streak++; 
+      this.saveToFile();
    }
 
    public static void main(String[] args)

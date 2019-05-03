@@ -76,9 +76,9 @@ public class BlackjackView
       frame.revalidate();
    }
    
-   public void displayEndMessage(String winner, int dealerScore, int playerScore, int computerScore)
+   public void displayEndMessage(String winner, int dealerScore, int playerScore, int computerScore, int streakScore)
    {
-      endMessage = new EndMessage(winner, dealerScore, playerScore, computerScore);
+      endMessage = new EndMessage(winner, dealerScore, playerScore, computerScore, streakScore);
       frame.remove(gameGUI);
       frame.add(endMessage); 
       frame.repaint();

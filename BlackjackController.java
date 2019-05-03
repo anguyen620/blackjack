@@ -40,7 +40,7 @@ public class BlackjackController
          compScore = model.compPlayer.getScore();
       }
       view.displayEndMessage(model.getWinner(), model.dealer.getScore(),
-         model.player.getScore(), compScore);
+         model.player.getScore(), compScore, model.getStreak());
       view.addMenuListener(menuListener);
    }
 

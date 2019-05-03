@@ -8,9 +8,10 @@ public class EndMessage extends JPanel
    JLabel dealerScore;
    JLabel playerScore;
    JLabel computerScore;
+   JLabel streakScore;
    JButton menu;
 
-   EndMessage(String winner, int dealer, int player, int comp)
+   EndMessage(String winner, int dealer, int player, int comp, int streak)
    {
       this.announcement = new JLabel(winner + " win(s)!");
       this.announcement.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -21,10 +22,13 @@ public class EndMessage extends JPanel
       this.dealerScore.setAlignmentX(Component.CENTER_ALIGNMENT);
       this.playerScore = new JLabel("Player's score: " + Integer.toString(player));
       this.playerScore.setAlignmentX(Component.CENTER_ALIGNMENT);
+      this.streakScore = new JLabel("Current Streak: " + Integer.toString(streak));
+      this.streakScore.setAlignmentX(Component.CENTER_ALIGNMENT);
 
       add(this.announcement); 
       add(this.playerScore);
       add(this.dealerScore);
+      add(this.streakScore);
       if (comp != 0)
       {
          this.computerScore = new JLabel("Computer's score: " + Integer.toString(comp));

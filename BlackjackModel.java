@@ -100,6 +100,11 @@ public class BlackjackModel
       }
    }
 
+   public int getStreak()
+   {
+      return statistics.getStreak();
+   }
+
    public void split(PlayerType type)
    {
 //      switch (type)
@@ -209,6 +214,7 @@ public class BlackjackModel
       {
          if (player.getScore() > dealer.getScore() && player.getScore() < 22)
             winner = "You";
+            statistics.increment();
       }
       else
       {
@@ -233,7 +239,7 @@ public class BlackjackModel
          }
       }
       if (winner == "")
-         winner = "Dealer";
+         winner = "You";
       return winner;
    }
 
