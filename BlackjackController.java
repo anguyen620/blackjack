@@ -17,6 +17,7 @@ public class BlackjackController
       this.view = view;
       this.model = model;
       initMenuListeners();
+      initGameListeners();
    }
 
    public void addView(BlackjackView view)
