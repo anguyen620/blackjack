@@ -199,27 +199,35 @@ public class BlackjackModel
    public String getWinner()
    {
       String winner = "";
+      if (dealer.getScore() < 22)
+         winner = "Dealer";
+
+      if (winner == "Dealer")
+      {
+         if (player.getScore() > dealer.getScore() && player.getScore() < 22)
+            winner = "You";
+      }
+      else
+      {
+         if (player.getScore() < 22)
+            winner = "You";
+      }
 
       if (compPlayer != null)
       {
             if(compPlayer.getScore() < 22)
             {
-               if (dealer.getScore() < 22 && dealer.getScore() >= compPlayer.getScore())
-                  winner = "Dealer";
+               if (winner == "You")
+               {
+                  if (compPlayer.getScore() > player.getScore())
+                     winner = "Computer";
+               }
                else
-                  winner = "Computer";
-            }
-      }
-
-      if (winner == "Dealer")
-      {
-         if (player.getScore() > dealer.getScore())
-            winner = "You";
-      }
-      else
-      {
-         if (player.getScore() >= compPlayer.getScore())
-            winner = "You";
+               {
+                  if (compPlayer.getScore() > dealer.getScore())
+                     winner = "Computer";
+            }   
+         }
       }
       return winner;
    }
