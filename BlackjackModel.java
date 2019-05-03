@@ -224,11 +224,13 @@ public class BlackjackModel
                }
                else
                {
-                  if (compPlayer.getScore() > dealer.getScore())
+                  if (compPlayer.getScore() > dealer.getScore() || dealer.getScore() > 21)
                      winner = "Computer";
             }   
          }
       }
+      if (winner == "")
+         winner = "Dealer";
       return winner;
    }
 
