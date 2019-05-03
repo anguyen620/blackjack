@@ -244,7 +244,7 @@ public class BlackjackModel
       {
          if (dealer.getScore() == player.getScore())
          {
-            continue;
+            
          }
          else
          {
