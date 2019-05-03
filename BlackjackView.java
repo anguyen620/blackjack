@@ -68,6 +68,7 @@ public class BlackjackView
       gameGUI.initLayout(type);
       frame.add(gameGUI);
       frame.repaint();
+      frame.revalidate();
    }
    
    public void displayEndMessage(String winner, int dealerScore, int playerScore, int computerScore)
