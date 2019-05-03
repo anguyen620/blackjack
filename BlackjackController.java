@@ -29,6 +29,20 @@ public class BlackjackController
       this.model = model;
    }
 
+   public void switchTurns()
+   {
+      int compScore = 0;
+      view.disableButtons();
+      model.dealerPlay();
+      if (model.getMode() == Mode.VERSUS)
+      {
+         model.compPlay();
+         compScore = model.compPlayer.getScore();
+      }
+      view.displayEndMessage(model.getWinner(), model.dealer.getScore(),
+         model.player.getScore(), compScore);
+   }
+
    public void playSinglePlayer()
    {
       addModel(new BlackjackModel(Mode.SINGLE_PLAYER));
@@ -133,20 +147,11 @@ public class BlackjackController
        @Override
        public void actionPerformed(ActionEvent e)
        {
-          int compScore = 0;
           model.hit(PlayerType.USER);
           view.updateGameplayImages(PlayerType.USER, model.player.getHand());
           if (model.player.getScore() > 21)
           {
-             view.disableButtons();
-             model.dealerPlay();
-             if (model.getMode() == Mode.VERSUS)
-                {
-                   model.compPlay();
-                   compScore = model.compPlayer.getScore();
-                }
-             view.displayEndMessage(model.getWinner(), model.dealer.getScore(),
-                model.player.getScore(), compScore);
+             switchTurns();
           }
        }
    };
@@ -166,9 +171,7 @@ public class BlackjackController
        public void actionPerformed(ActionEvent e)
        {
           model.stand(PlayerType.USER);
-          model.dealerPlay();
-             if (model.getMode() == Mode.VERSUS)
-                model.compPlay();
+          switchTurns();
        }
    };
 }
