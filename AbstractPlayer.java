@@ -36,16 +36,35 @@ public abstract class AbstractPlayer
    {
       ArrayList<Card> cards = hand.getHand();
       score = 0;
-      
+
+      boolean acesPresent = false;      
+      int numAces = 0;
+
       for (Card card: cards)
       {
-         if (card.getValue() == 1 && score + 11 <= 21)
+         if (card.getValue() == 1)
          {
-            score += 11;
+            acesPresent = true;
+            numAces++;
          }
          else
          {
             score += card.getValue();
+         }
+      }
+
+      if (acesPresent)
+      {
+         for (int i = 0; i < numAces; i++)
+         {
+            if (score + 11 > 21)
+            {
+               score += 1;
+            }
+            else
+            {
+               score += 11;
+            }
          }
       }
    }
