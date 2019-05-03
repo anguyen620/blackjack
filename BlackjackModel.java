@@ -57,6 +57,7 @@ public class BlackjackModel
          case VERSUS:
             compPlayer = new Player();
             compPlayer.addToHand(deck.popCard());
+            compPlayer.addToHand(deck.popCard());
       }
    }
 
